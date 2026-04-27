@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>Mellvie</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <icon>https://echoesfromshell.netlify.app/icon.png</icon>
+  <id>https://echoesfromshell.netlify.app/</id>
+  <link href="https://echoesfromshell.netlify.app/" rel="alternate"/>
+  <link href="https://echoesfromshell.netlify.app/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, Mellvie</rights>
+  <subtitle>De la paix, à la lisière de la vie</subtitle>
+  <title>EchoesFromShell</title>
+  <updated>2026-04-26T16:04:14.543Z</updated>
+  <entry>
+    <author>
+      <name>Mellvie</name>
+    </author>
+    <category term="start page" scheme="https://echoesfromshell.netlify.app/tags/start-page/"/>
+    <content>
+      <![CDATA[<p>A first keystroke in the silent shell.<br>EchoesFromShell begins with a quiet welcome — in many languages.</p><hr><p>English – Welcome.<br>中文 – 欢迎。<br>Français – Bienvenue.<br>Español – Bienvenido.<br>Deutsch – Willkommen.<br>日本語 – いらっしゃいませ。<br>Italiano – Benvenuto.<br>Português – Bem-vindo.<br>Русский – Добро пожаловать.<br>العربية – أهلاً وسهلاً<br>हिन्दी – स्वागत है<br>한국어 – 환영합니다<br>Nederlands – Welkom.<br>Polski – Witaj.<br>Türkçe – Hoş geldin.<br>Svenska – Välkommen.<br>Suomi – Tervetuloa.<br>Čeština – Vítejte.<br>Ελληνικά – Καλώς ήρθες.</p><hr><p>No fanfare, just echoes.  </p><p>Thank you for stopping by.</p>]]>
+    </content>
+    <id>https://echoesfromshell.netlify.app/2026/04/26/welcome/</id>
+    <link href="https://echoesfromshell.netlify.app/2026/04/26/welcome/"/>
+    <published>2026-04-26T15:59:14.000Z</published>
+    <summary>
+      <![CDATA[<p>A first keystroke in the silent shell.<br>EchoesFromShell begins with a quiet welcome — in many languages.</p>
+<hr>
+<p>English –]]>
+    </summary>
+    <title>welcome</title>
+    <updated>2026-04-26T16:04:14.543Z</updated>
+  </entry>
+</feed>

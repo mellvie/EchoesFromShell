@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: EchoesFromShell
+subtitle: 'De la paix, à la lisière de la vie'
+description: "Écrire ces choses entre l'émotion, la technique et la civilisation"
 keywords:
-author: John Doe
+author: Mellvie
 language: en
-timezone: ''
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://echoesfromshell.netlify.app/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -96,9 +96,33 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: cactus
+theme_config:
+  colorscheme: white
+  nav:
+    home: /
+    about: /about/
+    articles: /archives/
+    projects: https://github.com/mellvie/EchoesFromShell.git
+    Links: /links/
+    PGP: /pgp/mellvie.asc
+    RSS: /atom.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+
+# Rss feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: true
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:

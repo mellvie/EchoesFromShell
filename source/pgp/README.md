@@ -6,7 +6,7 @@
 
 | 文件 | 指纹 |
 |------|------|
-| `mellvie.asc` | `8592 9B5C CC29 D384 F7D9 332E A6FD 2430 D852 2E8E` |
+| `mellvie.asc` | `B6E6 B075 94A8 4143 121D D4D8 8D4B F30D F5E2 7E3B` |
 
 ## 好友公钥
 

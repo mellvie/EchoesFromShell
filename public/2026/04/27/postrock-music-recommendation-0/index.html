@@ -54,10 +54,11 @@
 
     <!-- persian styles -->
     
-    <!-- rss -->
+    <!-- feeds (atom / rss2) -->
     
+      <link rel="alternate" href="/atom.xml" title="EchoesFromShell" type="application/atom+xml" />
     
-      <link rel="alternate" href="/true" title="EchoesFromShell" type="application/atom+xml" />
+      <link rel="alternate" href="/rss2.xml" title="EchoesFromShell" type="application/rss+xml" />
     
 	<!-- mathjax -->
 	
@@ -102,6 +103,8 @@
     <br/>
     <span id="actions">
       <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2026/05/16/rss-the-feed-that-never-died/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" aria-label="Next post" href="/2026/04/26/welcome/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -363,6 +366,17 @@
 
 
 <script src="/js/main.js"></script>
+
+<!-- Three.js (local) + Starfield -->
+
+<script src="/js/lib/three.min.js"></script>
+
+
+<script src="/js/starfield.js"></script>
+
+<!-- page transitions: fallback for browsers without View Transitions -->
+
+<script src="/js/page-transitions.js"></script>
 
 <!-- search -->
 

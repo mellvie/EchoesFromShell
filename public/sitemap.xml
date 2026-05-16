@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/</loc>
+    
+    <lastmod>2026-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://echoesfromshell.netlify.app/about/index.html</loc>
     
     <lastmod>2026-05-11</lastmod>
@@ -49,7 +58,7 @@
 
   <url>
     <loc>https://echoesfromshell.netlify.app/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -57,35 +66,63 @@
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/%E5%90%8E%E6%91%87/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/postrock/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/Sigur-Ros/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/music/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/start-page/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/tags/rss/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/tags/indieweb/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/tags/self-hosting/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/tags/technology/</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

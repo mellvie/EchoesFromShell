@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>EchoesFromShell</title>
+    <link>https://echoesfromshell.netlify.app/</link>
+    <description>De la paix, à la lisière de la vie</description>
+    <language>en</language>
+    <copyright>All rights reserved 2026, Mellvie</copyright>
+    <lastBuildDate>Sat, 16 May 2026 04:33:37 GMT</lastBuildDate>
+    <generator>Hexo</generator>
+    <image>
+      <url>https://echoesfromshell.netlify.app/icon.png</url>
+      <title>EchoesFromShell</title>
+      <link>https://echoesfromshell.netlify.app/</link>
+    </image>
+    <atom:link href="https://echoesfromshell.netlify.app/rss2.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>为什么我会推荐使用 RSS</title>
+      <link>https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/</link>
+      <description>
+        <![CDATA[<blockquote>
+<p>这个博客有 RSS 订阅了。</p>
+</blockquote>
+<hr>
+<h1 id="一段简短的历史"><a href="#一段简短的历史" class="headerlink"]]>
+      </description>
+      <author>Mellvie</author>
+      <category domain="https://echoesfromshell.netlify.app/tags/rss/">rss</category>
+      <category domain="https://echoesfromshell.netlify.app/tags/indieweb/">indieweb</category>
+      <category domain="https://echoesfromshell.netlify.app/tags/self-hosting/">self-hosting</category>
+      <category domain="https://echoesfromshell.netlify.app/tags/technology/">technology</category>
+      <pubDate>Sat, 16 May 2026 04:20:00 GMT</pubDate>
+      <content:encoded>
+        <![CDATA[<blockquote><p>这个博客有 RSS 订阅了。</p></blockquote><hr><h1 id="一段简短的历史"><a href="#一段简短的历史" class="headerlink" title="一段简短的历史"></a>一段简短的历史</h1><h2 id="前传：1997"><a href="#前传：1997" class="headerlink" title="前传：1997"></a>前传：1997</h2><p>RSS 的故事可以追溯到 Web 1.0 时代的几个实验性格式。1997 年，微软提出了 <strong>Channel Definition Format (CDF)</strong>，Netscape 贡献了 <strong>Meta Content Framework (MCF)</strong>，Dave Winer 则在 UserLand 发布了 <strong>scriptingNews</strong> 格式。这些都是在思考同一个问题：<strong>机器如何自动发现网站有更新？</strong></p><h2 id="Netscape-时代：RSS-的诞生"><a href="#Netscape-时代：RSS-的诞生" class="headerlink" title="Netscape 时代：RSS 的诞生"></a>Netscape 时代：RSS 的诞生</h2><p><strong>1999 年 3 月 15 日</strong>，Netscape 发布了 <strong>RSS 0.90</strong>，全称 <strong>RDF Site Summary</strong>，由 Ramanathan Guha 编写。它基于 W3C 的 RDF（资源描述框架），用于在 My.Netscape.com 门户上聚合新闻。</p><p>仅四个月后，<strong>1999 年 7 月 10 日</strong>，Netscape 的 Dan Libby 简化了规范，发布了 <strong>RSS 0.91</strong>，去掉了 RDF 依赖，变得更薄、更实用。</p><h2 id="分叉时代：三派分立"><a href="#分叉时代：三派分立" class="headerlink" title="分叉时代：三派分立"></a>分叉时代：三派分立</h2><p>2000 年，RSS 进入了著名的<strong>分叉之战</strong>：</p><ul><li><p><strong>UserLand 路线</strong>（Dave Winer）：2000 年 6 月 9 日发布 UserLand 版的 RSS 0.91，随后 <strong>2000 年 12 月 25 日</strong>推出 RSS 0.92，最终在 <strong>2002 年 8 月 19 日</strong>发布 <strong>RSS 2.0</strong>——此时 RSS 的含义变为了 <strong>Really Simple Syndication</strong>。2003 年 7 月 15 日，RSS 2.0 的维护权移交至哈佛大学伯克曼互联网与社会中心，Dave Winer 仍是主要作者。</p></li><li><p><strong>RSS-DEV 工作组</strong>：这是一群独立开发者，坚持 RDF 的根基，在 <strong>2000 年 12 月 6 日</strong>发布了 <strong>RSS 1.0</strong>，全称仍为 <strong>RDF Site Summary</strong>。他们设计了模块化扩展机制（Dublin Core、Syndication、Content 等模块），至今仍被广泛使用。</p></li><li><p><strong>Atom</strong>：2003 年起，因对 RSS 2.0 标准化进程的不满（规范模糊、缺少正式的标准组织背书），一批社区成员在 IETF 成立了 Atom Publishing Protocol 工作组。<strong>2005 年 12 月</strong>，<strong>Atom 1.0</strong> 作为 IETF <strong>RFC 4287</strong>（Proposed Standard）正式发布。它解决了 RSS 2.0 中日期格式不统一、类型定义模糊等问题。</p></li></ul><p>这就是为什么今天你会看到 <strong><code>atom.xml</code></strong> 和 <strong><code>rss2.xml</code></strong> 并存的局面。</p><h2 id="日落与重生"><a href="#日落与重生" class="headerlink" title="日落与重生"></a>日落与重生</h2><p>2005 年 10 月，Google Reader 上线，RSS 开始进入大众视野。巅峰时期，它是很多人获取信息的主要方式。</p><p><strong>2013 年 3 月 13 日</strong>，Google 宣布将于同年 <strong>7 月 1 日</strong>关闭 Google Reader。消息一出，互联网哀鸿遍野。数百万用户被迫寻找替代品，Feedly 在三天内新增了 50 万用户。但更大的影响是：<strong>很多人开始相信 RSS “死”了。</strong></p><p>社交媒体崛起，算法推荐取代了手动订阅。但 RSS 从未消失——它只是回到了它最擅长的领域：<strong>独立博客、自托管网站、技术社区的底层基建</strong>。</p><p>今天，NewsBlur、Miniflux、NetNewsWire、FreshRSS 等阅读器依然活跃，2024 年甚至出现了新入局者如 ReadKit。这条协议在默默运转，每天同步着数以亿计的信息。</p><hr><h1 id="RSS-的价值从未消失"><a href="#RSS-的价值从未消失" class="headerlink" title="RSS 的价值从未消失"></a>RSS 的价值从未消失</h1><p>如果你经历过推送算法的喂养，再回到 RSS，你会发现它提供的是截然不同的东西：</p><h3 id="1-你控制你的阅读流"><a href="#1-你控制你的阅读流" class="headerlink" title="1. 你控制你的阅读流"></a>1. 你控制你的阅读流</h3><p>没有算法替你排序，没有”你可能也喜欢”。RSS 的输出就是输入——你订阅了什么，就看到什么。时间线就是你订阅源的<strong>联合时间线</strong>，不是平台的时间线。</p><h3 id="2-隐私"><a href="#2-隐私" class="headerlink" title="2. 隐私"></a>2. 隐私</h3><p>RSS 是纯拉取形式的（pull）。没有追踪像素，没有行为分析，不需要登录。你的阅读器知道你读了什么，但平台不知道。这在 2026 年的互联网上是稀缺品。</p><h3 id="3-对抗信息孤岛"><a href="#3-对抗信息孤岛" class="headerlink" title="3. 对抗信息孤岛"></a>3. 对抗信息孤岛</h3><p>博客在减少，内容在向封闭平台集中。但每多一个 RSS 订阅源，就是多一根通向独立网站的线。RSS 可能是目前唯一一种<strong>跨平台的、去中心化的订阅协议</strong>——不依附于任何一家公司、不被任何算法左右。</p><h3 id="4-适合深度阅读"><a href="#4-适合深度阅读" class="headerlink" title="4. 适合深度阅读"></a>4. 适合深度阅读</h3><p>RSS 阅读器鼓励<strong>扫标题 → 选读</strong>的模式，而不是短视频式的无限刷新。Newsboat、Miniflux、NetNewsWire 这些阅读器没有”上瘾设计”，你读到的东西是你真正想读的。</p><hr><h1 id="如何订阅-EchoesFromShell"><a href="#如何订阅-EchoesFromShell" class="headerlink" title="如何订阅 EchoesFromShell"></a>如何订阅 EchoesFromShell</h1><p>这个博客现在提供两种格式的完整内容 RSS Feed：</p><table><thead><tr><th>格式</th><th>地址</th><th>特点</th></tr></thead><tbody><tr><td><strong>Atom 1.0</strong></td><td><code>/atom.xml</code></td><td>IETF RFC 4287 标准，包含更新时间和分类元数据</td></tr><tr><td><strong>RSS 2.0.11</strong></td><td><code>/rss2.xml</code></td><td>最广泛兼容，几乎所有阅读器都支持</td></tr></tbody></table><p>两条 Feed 都包含<strong>全文内容</strong>（不是摘要），所以在阅读器里可以直接读完文章，不必点回网页。</p><blockquote><p>当然如果想来参观我的博客，欣赏我博客的新装修，随时欢迎~</p></blockquote><h3 id="Newsboat（终端党）"><a href="#Newsboat（终端党）" class="headerlink" title="Newsboat（终端党）"></a>Newsboat（终端党）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 urls 文件中添加</span></span><br><span class="line">https://echoesfromshell.netlify.app/rss2.xml</span><br></pre></td></tr></table></figure><h3 id="Miniflux-FreshRSS（自托管）"><a href="#Miniflux-FreshRSS（自托管）" class="headerlink" title="Miniflux &#x2F; FreshRSS（自托管）"></a>Miniflux &#x2F; FreshRSS（自托管）</h3><p>添加源时输入上面的 URL 即可，Feed 自动发现会工作。</p><h3 id="Feedly-Inoreader-等云阅读器"><a href="#Feedly-Inoreader-等云阅读器" class="headerlink" title="Feedly &#x2F; Inoreader 等云阅读器"></a>Feedly &#x2F; Inoreader 等云阅读器</h3><p>搜索 <code>EchoesFromShell</code> 或直接添加 <code>https://echoesfromshell.netlify.app/atom.xml</code>。</p><h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>点击首页的 <strong>RSS 图标</strong>（📡），或直接访问 <code>/rss2.xml</code>，浏览器如果有 RSS 扩展会自动识别。</p><h3 id="我的阅读器"><a href="#我的阅读器" class="headerlink" title="我的阅读器"></a>我的阅读器</h3><p>我自己在手机上阅读 RSS 使用的是 <strong>Read You</strong>，一个开源的 Material You 风格的 RSS 阅读器。在 <strong>F-Droid</strong> 上就能直接下载，使用体验还算不错。</p><hr><h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>RSS 并不是新技术。它甚至不出彩。但它可能是在这个封闭趋同的互联网上，最接近”你真正拥有自己的信息流”的东西。</p><p><strong>此博客有一根 RSS 线，随时可以连上。</strong></p><hr><p><em>关于此博客的 RSS 设置：同时输出 Atom 1.0 和 RSS 2.0，全文内容，20 条上限，由 hexo-generator-feed 生成。如果你发现任何 Feed 异常，欢迎在 GitHub 提 issue，或者 mail me。</em></p>]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>后摇 | Starálfur</title>
+      <link>https://echoesfromshell.netlify.app/2026/04/27/postrock-music-recommendation-0/</link>
+      <description>
+        <![CDATA[<h1 id="Staralfur-–-冰岛冰川下的一抹暖光"><a href="#Staralfur-–-冰岛冰川下的一抹暖光" class="headerlink" title="Starálfur – 冰岛冰川下的一抹暖光"></a>Starálfur –]]>
+      </description>
+      <author>Mellvie</author>
+      <category domain="https://echoesfromshell.netlify.app/tags/%E5%90%8E%E6%91%87/">后摇</category>
+      <category domain="https://echoesfromshell.netlify.app/tags/postrock/">postrock</category>
+      <category domain="https://echoesfromshell.netlify.app/tags/Sigur-Ros/">Sigur Rós</category>
+      <category domain="https://echoesfromshell.netlify.app/tags/music/">music</category>
+      <pubDate>Mon, 27 Apr 2026 09:14:47 GMT</pubDate>
+      <content:encoded>
+        <![CDATA[<h1 id="Staralfur-–-冰岛冰川下的一抹暖光"><a href="#Staralfur-–-冰岛冰川下的一抹暖光" class="headerlink" title="Starálfur – 冰岛冰川下的一抹暖光"></a>Starálfur – 冰岛冰川下的一抹暖光</h1><p><strong>乐队</strong>: Sigur Rós<br><strong>专辑</strong>: 《Ágætis byrjun》(1999)</p><hr><p><em>来自官方专辑页对此单曲的介绍</em></p><blockquote><p>The main string melody at the start of the song we think was written by Georg, and Jónsi picked up on the two chord progression and wrote the melody. The whole song was pitched up by half tone with the varying speed with the tape machine. The strings at the end are palindromic. Not played palindromically, but reversed at the end with a COMPUTER (We had so much fun with our friend the computer). The song was not played live until years later when Amiina toured with Sigur Rós and everyone had to figure out what to play. We had a hard time figuring out what to add to the song. It was basically just strings, vocals and Jónsi’s acoustic guitar. We did not feel we had cracked it completely, so we tried a number of things out. The brass was really fun. We don’t think it was written out, so there were other methods in getting what we wanted out of the players. The scales and rise before the last chorus in the song were drawn out of them by mentioning Jessica Fletcher: “You know – Murder She Wrote, that kind of thing – can you do that?” The rhythmical elements we ended up using was partly synthesised drums, but the fun part was recording the sun of ripping grass and the clenched fist into the earth. Georg got that part. And let’s not forget the compressed piano. There was also a Moog, reversed autoharp and Kjartan’s mother’s long wave radio. The morse code and the soprano singer (which appears once in the song) comes from that radio.</p></blockquote><h2 id="关于这首歌"><a href="#关于这首歌" class="headerlink" title="关于这首歌"></a>关于这首歌</h2><p><code>Starálfur</code> 在冰岛语中意为 <strong>“星之精灵”</strong> 或 <strong>“凝视星星的精灵”</strong>。<br>全曲仅 6 分 46 秒，却像一部微型电影。</p><hr><h2 id="我与它的故事"><a href="#我与它的故事" class="headerlink" title="我与它的故事"></a>我与它的故事</h2><h3 id="初识与错过"><a href="#初识与错过" class="headerlink" title="初识与错过"></a>初识与错过</h3><p>说是我和这个单曲的故事，其实不是很准确，更准确的应当是我和它所在的那张专辑 <strong>《Ágætis byrjun》</strong> 的故事。</p><p>高中时期，我接触后摇，也在 Bilibili 中接触到了这张专辑。</p><p>专辑的开篇和第一首歌 <strong>《Svefn-g-englar》</strong> 在那时的我听起来，没有很特别的感受，我甚至觉得人声配合的很奇怪-音调很高，听不出具体的感情，还有其不断重复的歌词，在中文语境中，难免会让人听成“一起鹦鹉”。那时候，我在把这首歌给同学听的时候，他们也觉得有些可笑和奇怪，这种音乐显然不是那能被快速理解和欣赏的，至少对于我们来说，是这样。</p><p>后来上了大学，我听 <em>LinkinPark</em> 变少了，听后摇反而稍微多了一些。这张专辑在我心里始终占着一部分空间，但我尝试欣赏其真正的内涵的时候，却被困扰。然而我隔一段时间，就想进行一次“破解”，去尝试听，即使听不明白，我也会从 <em>Intro</em> 听到专辑的最后。</p><p>就这样持续了一个多学期，在大一下学期，我觉得渐渐的能感受到其中的美了，真正领悟到其具有深刻的美丽的时候，是这首歌，在这个场景下…</p><h3 id="重逢"><a href="#重逢" class="headerlink" title="重逢"></a>重逢</h3><p>我在宿舍里，似乎是周末，宿舍的蛙滴在打三角洲，其开麦的声音回荡在附近。我准备刷鞋，因为不想被蛙滴的声响吵个十几分钟，我戴上降噪耳机，播放了专辑 <strong>《Ágætis byrjun》</strong> 。</p><p>前面的几首歌有美感，但真正让我瞬间感到和周围的环境脱离开来的单曲是 <em>Starálfur</em> 。</p><p>那时我突然觉得这张专辑变得和记忆中的不一样了，这首歌明亮的弦乐、有趣的段落设计、童话般的人声，和我身处的环境差别太大了，冲击太强了。原来音乐不是“一听起来就觉得它好听”，而是 <em>他们演奏出的美，并不是在第一次见面就表现出来</em> 。</p><p>这首歌的感觉可以这样形容:</p><blockquote><p>它是音乐，对我的生活没什么影响。<br>它就像在稍冷的空调屋子中的一张毯子，突然出现在旁边。虽然可以选择将空调的温度调高一些，但裹上这个毯子会让我更舒适。</p></blockquote><p><em>(ps:中国人可能更能体会)</em></p><hr><h2 id="试听"><a href="#试听" class="headerlink" title="试听"></a>试听</h2><audio controls preload="metadata" style="width: 100%;">  <source src="/musics/Starálfur.aac" type="audio/aac">  您的浏览器不支持 audio 元素。</audio><ul><li>若无法播放，请到正版流媒体平台欣赏。</li></ul><hr><h2 id="一些题外话"><a href="#一些题外话" class="headerlink" title="一些题外话"></a>一些题外话</h2><p>如果小时候的我，知道了自己到大学天天听的歌是这种类型，那他可能会不理解的说：</p><blockquote><p>“未来的我的品味这么没救吗”。</p></blockquote><p>他不知道，却刚刚好。</p><hr><h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><ul><li><a href="https://sigurros.com/">Sigur Rós 官方网站</a></li><li><a href="https://sigurros.com/music/agaetis-byrjun/">官方专辑网页</a></li></ul><hr>]]>
+      </content:encoded>
+    </item>
+    <item>
+      <title>welcome</title>
+      <link>https://echoesfromshell.netlify.app/2026/04/26/welcome/</link>
+      <description>
+        <![CDATA[<p>A first keystroke in the silent shell.<br>EchoesFromShell begins with a quiet welcome — in many languages.</p>
+<hr>
+<p>English –]]>
+      </description>
+      <author>Mellvie</author>
+      <category domain="https://echoesfromshell.netlify.app/tags/start-page/">start page</category>
+      <pubDate>Sun, 26 Apr 2026 15:59:14 GMT</pubDate>
+      <content:encoded>
+        <![CDATA[<p>A first keystroke in the silent shell.<br>EchoesFromShell begins with a quiet welcome — in many languages.</p><hr><p>English – Welcome.<br>中文 – 欢迎。<br>Français – Bienvenue.<br>Español – Bienvenido.<br>Deutsch – Willkommen.<br>日本語 – いらっしゃいませ。<br>Italiano – Benvenuto.<br>Português – Bem-vindo.<br>Русский – Добро пожаловать.<br>العربية – أهلاً وسهلاً<br>हिन्दी – स्वागत है<br>한국어 – 환영합니다<br>Nederlands – Welkom.<br>Polski – Witaj.<br>Türkçe – Hoş geldin.<br>Svenska – Välkommen.<br>Suomi – Tervetuloa.<br>Čeština – Vítejte.<br>Ελληνικά – Καλώς ήρθες.</p><hr><p>No fanfare, just echoes.  </p><p>Thank you for stopping by.</p>]]>
+      </content:encoded>
+    </item>
+  </channel>
+</rss>

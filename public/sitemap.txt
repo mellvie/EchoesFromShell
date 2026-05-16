@@ -1,3 +1,4 @@
+https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/
 https://echoesfromshell.netlify.app/about/index.html
 https://echoesfromshell.netlify.app/pgp/README.html
 https://echoesfromshell.netlify.app/links/index.html
@@ -9,3 +10,7 @@ https://echoesfromshell.netlify.app/tags/postrock/
 https://echoesfromshell.netlify.app/tags/Sigur-Ros/
 https://echoesfromshell.netlify.app/tags/music/
 https://echoesfromshell.netlify.app/tags/start-page/
+https://echoesfromshell.netlify.app/tags/rss/
+https://echoesfromshell.netlify.app/tags/indieweb/
+https://echoesfromshell.netlify.app/tags/self-hosting/
+https://echoesfromshell.netlify.app/tags/technology/

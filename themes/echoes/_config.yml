@@ -28,6 +28,10 @@ nav:
 # 'icon' value will be used as title when 'label' is missing.
 social_links:
   -
+    icon: rss
+    label: RSS
+    link: /rss2.xml
+  -
     icon: github
     link: https://github.com/mellvie/EchoesFromShell.git
   -
@@ -84,7 +88,8 @@ error_404:
 # Look and Feel
 ##############################################################################
 
-# Customize the logo (i.e., the cactus) in the header.
+# Echoes theme — Outer Wilds inspired Hexo theme.
+# Forked and heavily modified from hexo-theme-cactus (MIT).
 # Options:
 #   - enabled: whether to show (true) or hide (false) the logo.
 #   - width: width of the logo in pixel units
@@ -138,7 +143,8 @@ page_width: 48
 ##############################################################################
 
 # Enable or disable the RSS feed.
-rss: true
+# Set to empty string to auto-detect from hexo-generator-feed config.
+rss:
 
 # Turn your web pages into graph objects (see http://ogp.me).
 open_graph:
@@ -159,7 +165,7 @@ mathjax:
 # Fill in your Disqus Comments Shortname to enable Disqus comments.
 disqus:
   enabled: false
-  shortname: cactus-1
+  shortname: echoes-from-shell
 
 # Fill in your Utterances data to enable Utterances comments
 utterances:

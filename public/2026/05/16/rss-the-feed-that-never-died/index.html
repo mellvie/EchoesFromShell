@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="这个博客有 RSS 订阅了。   一段简短的历史前传：1997RSS 的故事可以追溯到 Web 1.0 时代的几个实验性格式。1997 年，微软提出了 Channel Definition Format (CDF)，Netscape 贡献了 Meta Content Framework (MCF)，Dave Winer 则在 UserLand 发布了 scriptingNews 格式。这些都是在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么我会推荐使用 RSS">
+<meta property="og:url" content="https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/index.html">
+<meta property="og:site_name" content="EchoesFromShell">
+<meta property="og:description" content="这个博客有 RSS 订阅了。   一段简短的历史前传：1997RSS 的故事可以追溯到 Web 1.0 时代的几个实验性格式。1997 年，微软提出了 Channel Definition Format (CDF)，Netscape 贡献了 Meta Content Framework (MCF)，Dave Winer 则在 UserLand 发布了 scriptingNews 格式。这些都是在">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-05-16T04:20:00.000Z">
+<meta property="article:modified_time" content="2026-05-16T04:33:37.821Z">
+<meta property="article:author" content="Mellvie">
+<meta property="article:tag" content="indieweb">
+<meta property="article:tag" content="rss">
+<meta property="article:tag" content="self-hosting">
+<meta property="article:tag" content="technology">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>为什么我会推荐使用 RSS</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- feeds (atom / rss2) -->
+    
+      <link rel="alternate" href="/atom.xml" title="EchoesFromShell" type="application/atom+xml" />
+    
+      <link rel="alternate" href="/rss2.xml" title="EchoesFromShell" type="application/rss+xml" />
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/mellvie/EchoesFromShell.git">Projects</a></li><!--
+     --><!--
+       --><li><a href="/links/">Links</a></li><!--
+     --><!--
+       --><li><a href="/pgp/mellvie.asc">PGP</a></li><!--
+     --><!--
+       --><li><a href="/atom.xml">RSS</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/04/27/postrock-music-recommendation-0/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&text=为什么我会推荐使用 RSS"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&is_video=false&description=为什么我会推荐使用 RSS"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=为什么我会推荐使用 RSS&body=Check out this article: https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&name=为什么我会推荐使用 RSS&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&t=为什么我会推荐使用 RSS"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%AE%B5%E7%AE%80%E7%9F%AD%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">1.</span> <span class="toc-text">一段简短的历史</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E4%BC%A0%EF%BC%9A1997"><span class="toc-number">1.1.</span> <span class="toc-text">前传：1997</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Netscape-%E6%97%B6%E4%BB%A3%EF%BC%9ARSS-%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.2.</span> <span class="toc-text">Netscape 时代：RSS 的诞生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%8F%89%E6%97%B6%E4%BB%A3%EF%BC%9A%E4%B8%89%E6%B4%BE%E5%88%86%E7%AB%8B"><span class="toc-number">1.3.</span> <span class="toc-text">分叉时代：三派分立</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A5%E8%90%BD%E4%B8%8E%E9%87%8D%E7%94%9F"><span class="toc-number">1.4.</span> <span class="toc-text">日落与重生</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RSS-%E7%9A%84%E4%BB%B7%E5%80%BC%E4%BB%8E%E6%9C%AA%E6%B6%88%E5%A4%B1"><span class="toc-number">2.</span> <span class="toc-text">RSS 的价值从未消失</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%A0%E6%8E%A7%E5%88%B6%E4%BD%A0%E7%9A%84%E9%98%85%E8%AF%BB%E6%B5%81"><span class="toc-number">2.1.</span> <span class="toc-text">1. 你控制你的阅读流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9A%90%E7%A7%81"><span class="toc-number">2.2.</span> <span class="toc-text">2. 隐私</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AF%B9%E6%8A%97%E4%BF%A1%E6%81%AF%E5%AD%A4%E5%B2%9B"><span class="toc-number">2.3.</span> <span class="toc-text">3. 对抗信息孤岛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%80%82%E5%90%88%E6%B7%B1%E5%BA%A6%E9%98%85%E8%AF%BB"><span class="toc-number">2.4.</span> <span class="toc-text">4. 适合深度阅读</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%A2%E9%98%85-EchoesFromShell"><span class="toc-number">3.</span> <span class="toc-text">如何订阅 EchoesFromShell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Newsboat%EF%BC%88%E7%BB%88%E7%AB%AF%E5%85%9A%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">Newsboat（终端党）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Miniflux-FreshRSS%EF%BC%88%E8%87%AA%E6%89%98%E7%AE%A1%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">Miniflux &#x2F; FreshRSS（自托管）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Feedly-Inoreader-%E7%AD%89%E4%BA%91%E9%98%85%E8%AF%BB%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">Feedly &#x2F; Inoreader 等云阅读器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">3.4.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E9%98%85%E8%AF%BB%E5%99%A8"><span class="toc-number">3.5.</span> <span class="toc-text">我的阅读器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">最后</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        为什么我会推荐使用 RSS
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Mellvie</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-05-16T04:20:00.000Z" class="dt-published" itemprop="datePublished">2026-05-16</time>
+        
+        (Updated: <time datetime="2026-05-16T04:33:37.821Z" class="dt-updated" itemprop="dateModified">2026-05-16</time>)
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/indieweb/" rel="tag">indieweb</a>, <a class="p-category" href="/tags/rss/" rel="tag">rss</a>, <a class="p-category" href="/tags/self-hosting/" rel="tag">self-hosting</a>, <a class="p-category" href="/tags/technology/" rel="tag">technology</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <blockquote>
+<p>这个博客有 RSS 订阅了。</p>
+</blockquote>
+<hr>
+<h1 id="一段简短的历史"><a href="#一段简短的历史" class="headerlink" title="一段简短的历史"></a>一段简短的历史</h1><h2 id="前传：1997"><a href="#前传：1997" class="headerlink" title="前传：1997"></a>前传：1997</h2><p>RSS 的故事可以追溯到 Web 1.0 时代的几个实验性格式。1997 年，微软提出了 <strong>Channel Definition Format (CDF)</strong>，Netscape 贡献了 <strong>Meta Content Framework (MCF)</strong>，Dave Winer 则在 UserLand 发布了 <strong>scriptingNews</strong> 格式。这些都是在思考同一个问题：<strong>机器如何自动发现网站有更新？</strong></p>
+<h2 id="Netscape-时代：RSS-的诞生"><a href="#Netscape-时代：RSS-的诞生" class="headerlink" title="Netscape 时代：RSS 的诞生"></a>Netscape 时代：RSS 的诞生</h2><p><strong>1999 年 3 月 15 日</strong>，Netscape 发布了 <strong>RSS 0.90</strong>，全称 <strong>RDF Site Summary</strong>，由 Ramanathan Guha 编写。它基于 W3C 的 RDF（资源描述框架），用于在 My.Netscape.com 门户上聚合新闻。</p>
+<p>仅四个月后，<strong>1999 年 7 月 10 日</strong>，Netscape 的 Dan Libby 简化了规范，发布了 <strong>RSS 0.91</strong>，去掉了 RDF 依赖，变得更薄、更实用。</p>
+<h2 id="分叉时代：三派分立"><a href="#分叉时代：三派分立" class="headerlink" title="分叉时代：三派分立"></a>分叉时代：三派分立</h2><p>2000 年，RSS 进入了著名的<strong>分叉之战</strong>：</p>
+<ul>
+<li><p><strong>UserLand 路线</strong>（Dave Winer）：2000 年 6 月 9 日发布 UserLand 版的 RSS 0.91，随后 <strong>2000 年 12 月 25 日</strong>推出 RSS 0.92，最终在 <strong>2002 年 8 月 19 日</strong>发布 <strong>RSS 2.0</strong>——此时 RSS 的含义变为了 <strong>Really Simple Syndication</strong>。2003 年 7 月 15 日，RSS 2.0 的维护权移交至哈佛大学伯克曼互联网与社会中心，Dave Winer 仍是主要作者。</p>
+</li>
+<li><p><strong>RSS-DEV 工作组</strong>：这是一群独立开发者，坚持 RDF 的根基，在 <strong>2000 年 12 月 6 日</strong>发布了 <strong>RSS 1.0</strong>，全称仍为 <strong>RDF Site Summary</strong>。他们设计了模块化扩展机制（Dublin Core、Syndication、Content 等模块），至今仍被广泛使用。</p>
+</li>
+<li><p><strong>Atom</strong>：2003 年起，因对 RSS 2.0 标准化进程的不满（规范模糊、缺少正式的标准组织背书），一批社区成员在 IETF 成立了 Atom Publishing Protocol 工作组。<strong>2005 年 12 月</strong>，<strong>Atom 1.0</strong> 作为 IETF <strong>RFC 4287</strong>（Proposed Standard）正式发布。它解决了 RSS 2.0 中日期格式不统一、类型定义模糊等问题。</p>
+</li>
+</ul>
+<p>这就是为什么今天你会看到 <strong><code>atom.xml</code></strong> 和 <strong><code>rss2.xml</code></strong> 并存的局面。</p>
+<h2 id="日落与重生"><a href="#日落与重生" class="headerlink" title="日落与重生"></a>日落与重生</h2><p>2005 年 10 月，Google Reader 上线，RSS 开始进入大众视野。巅峰时期，它是很多人获取信息的主要方式。</p>
+<p><strong>2013 年 3 月 13 日</strong>，Google 宣布将于同年 <strong>7 月 1 日</strong>关闭 Google Reader。消息一出，互联网哀鸿遍野。数百万用户被迫寻找替代品，Feedly 在三天内新增了 50 万用户。但更大的影响是：<strong>很多人开始相信 RSS “死”了。</strong></p>
+<p>社交媒体崛起，算法推荐取代了手动订阅。但 RSS 从未消失——它只是回到了它最擅长的领域：<strong>独立博客、自托管网站、技术社区的底层基建</strong>。</p>
+<p>今天，NewsBlur、Miniflux、NetNewsWire、FreshRSS 等阅读器依然活跃，2024 年甚至出现了新入局者如 ReadKit。这条协议在默默运转，每天同步着数以亿计的信息。</p>
+<hr>
+<h1 id="RSS-的价值从未消失"><a href="#RSS-的价值从未消失" class="headerlink" title="RSS 的价值从未消失"></a>RSS 的价值从未消失</h1><p>如果你经历过推送算法的喂养，再回到 RSS，你会发现它提供的是截然不同的东西：</p>
+<h3 id="1-你控制你的阅读流"><a href="#1-你控制你的阅读流" class="headerlink" title="1. 你控制你的阅读流"></a>1. 你控制你的阅读流</h3><p>没有算法替你排序，没有”你可能也喜欢”。RSS 的输出就是输入——你订阅了什么，就看到什么。时间线就是你订阅源的<strong>联合时间线</strong>，不是平台的时间线。</p>
+<h3 id="2-隐私"><a href="#2-隐私" class="headerlink" title="2. 隐私"></a>2. 隐私</h3><p>RSS 是纯拉取形式的（pull）。没有追踪像素，没有行为分析，不需要登录。你的阅读器知道你读了什么，但平台不知道。这在 2026 年的互联网上是稀缺品。</p>
+<h3 id="3-对抗信息孤岛"><a href="#3-对抗信息孤岛" class="headerlink" title="3. 对抗信息孤岛"></a>3. 对抗信息孤岛</h3><p>博客在减少，内容在向封闭平台集中。但每多一个 RSS 订阅源，就是多一根通向独立网站的线。RSS 可能是目前唯一一种<strong>跨平台的、去中心化的订阅协议</strong>——不依附于任何一家公司、不被任何算法左右。</p>
+<h3 id="4-适合深度阅读"><a href="#4-适合深度阅读" class="headerlink" title="4. 适合深度阅读"></a>4. 适合深度阅读</h3><p>RSS 阅读器鼓励<strong>扫标题 → 选读</strong>的模式，而不是短视频式的无限刷新。Newsboat、Miniflux、NetNewsWire 这些阅读器没有”上瘾设计”，你读到的东西是你真正想读的。</p>
+<hr>
+<h1 id="如何订阅-EchoesFromShell"><a href="#如何订阅-EchoesFromShell" class="headerlink" title="如何订阅 EchoesFromShell"></a>如何订阅 EchoesFromShell</h1><p>这个博客现在提供两种格式的完整内容 RSS Feed：</p>
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>地址</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Atom 1.0</strong></td>
+<td><code>/atom.xml</code></td>
+<td>IETF RFC 4287 标准，包含更新时间和分类元数据</td>
+</tr>
+<tr>
+<td><strong>RSS 2.0.11</strong></td>
+<td><code>/rss2.xml</code></td>
+<td>最广泛兼容，几乎所有阅读器都支持</td>
+</tr>
+</tbody></table>
+<p>两条 Feed 都包含<strong>全文内容</strong>（不是摘要），所以在阅读器里可以直接读完文章，不必点回网页。</p>
+<blockquote>
+<p>当然如果想来参观我的博客，欣赏我博客的新装修，随时欢迎~</p>
+</blockquote>
+<h3 id="Newsboat（终端党）"><a href="#Newsboat（终端党）" class="headerlink" title="Newsboat（终端党）"></a>Newsboat（终端党）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 urls 文件中添加</span></span><br><span class="line">https://echoesfromshell.netlify.app/rss2.xml</span><br></pre></td></tr></table></figure>
+
+<h3 id="Miniflux-FreshRSS（自托管）"><a href="#Miniflux-FreshRSS（自托管）" class="headerlink" title="Miniflux &#x2F; FreshRSS（自托管）"></a>Miniflux &#x2F; FreshRSS（自托管）</h3><p>添加源时输入上面的 URL 即可，Feed 自动发现会工作。</p>
+<h3 id="Feedly-Inoreader-等云阅读器"><a href="#Feedly-Inoreader-等云阅读器" class="headerlink" title="Feedly &#x2F; Inoreader 等云阅读器"></a>Feedly &#x2F; Inoreader 等云阅读器</h3><p>搜索 <code>EchoesFromShell</code> 或直接添加 <code>https://echoesfromshell.netlify.app/atom.xml</code>。</p>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>点击首页的 <strong>RSS 图标</strong>（📡），或直接访问 <code>/rss2.xml</code>，浏览器如果有 RSS 扩展会自动识别。</p>
+<h3 id="我的阅读器"><a href="#我的阅读器" class="headerlink" title="我的阅读器"></a>我的阅读器</h3><p>我自己在手机上阅读 RSS 使用的是 <strong>Read You</strong>，一个开源的 Material You 风格的 RSS 阅读器。在 <strong>F-Droid</strong> 上就能直接下载，使用体验还算不错。</p>
+<hr>
+<h1 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h1><p>RSS 并不是新技术。它甚至不出彩。但它可能是在这个封闭趋同的互联网上，最接近”你真正拥有自己的信息流”的东西。</p>
+<p><strong>此博客有一根 RSS 线，随时可以连上。</strong></p>
+<hr>
+<p><em>关于此博客的 RSS 设置：同时输出 Atom 1.0 和 RSS 2.0，全文内容，20 条上限，由 hexo-generator-feed 生成。如果你发现任何 Feed 异常，欢迎在 GitHub 提 issue，或者 mail me。</em></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/mellvie/EchoesFromShell.git">Projects</a></li>
+        
+          <li><a href="/links/">Links</a></li>
+        
+          <li><a href="/pgp/mellvie.asc">PGP</a></li>
+        
+          <li><a href="/atom.xml">RSS</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E6%AE%B5%E7%AE%80%E7%9F%AD%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">1.</span> <span class="toc-text">一段简短的历史</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E4%BC%A0%EF%BC%9A1997"><span class="toc-number">1.1.</span> <span class="toc-text">前传：1997</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Netscape-%E6%97%B6%E4%BB%A3%EF%BC%9ARSS-%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.2.</span> <span class="toc-text">Netscape 时代：RSS 的诞生</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%8F%89%E6%97%B6%E4%BB%A3%EF%BC%9A%E4%B8%89%E6%B4%BE%E5%88%86%E7%AB%8B"><span class="toc-number">1.3.</span> <span class="toc-text">分叉时代：三派分立</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A5%E8%90%BD%E4%B8%8E%E9%87%8D%E7%94%9F"><span class="toc-number">1.4.</span> <span class="toc-text">日落与重生</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RSS-%E7%9A%84%E4%BB%B7%E5%80%BC%E4%BB%8E%E6%9C%AA%E6%B6%88%E5%A4%B1"><span class="toc-number">2.</span> <span class="toc-text">RSS 的价值从未消失</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%A0%E6%8E%A7%E5%88%B6%E4%BD%A0%E7%9A%84%E9%98%85%E8%AF%BB%E6%B5%81"><span class="toc-number">2.1.</span> <span class="toc-text">1. 你控制你的阅读流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9A%90%E7%A7%81"><span class="toc-number">2.2.</span> <span class="toc-text">2. 隐私</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AF%B9%E6%8A%97%E4%BF%A1%E6%81%AF%E5%AD%A4%E5%B2%9B"><span class="toc-number">2.3.</span> <span class="toc-text">3. 对抗信息孤岛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%80%82%E5%90%88%E6%B7%B1%E5%BA%A6%E9%98%85%E8%AF%BB"><span class="toc-number">2.4.</span> <span class="toc-text">4. 适合深度阅读</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%AE%A2%E9%98%85-EchoesFromShell"><span class="toc-number">3.</span> <span class="toc-text">如何订阅 EchoesFromShell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Newsboat%EF%BC%88%E7%BB%88%E7%AB%AF%E5%85%9A%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">Newsboat（终端党）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Miniflux-FreshRSS%EF%BC%88%E8%87%AA%E6%89%98%E7%AE%A1%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">Miniflux &#x2F; FreshRSS（自托管）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Feedly-Inoreader-%E7%AD%89%E4%BA%91%E9%98%85%E8%AF%BB%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">Feedly &#x2F; Inoreader 等云阅读器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">3.4.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E9%98%85%E8%AF%BB%E5%99%A8"><span class="toc-number">3.5.</span> <span class="toc-text">我的阅读器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%80%E5%90%8E"><span class="toc-number">4.</span> <span class="toc-text">最后</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&text=为什么我会推荐使用 RSS"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&is_video=false&description=为什么我会推荐使用 RSS"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=为什么我会推荐使用 RSS&body=Check out this article: https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&title=为什么我会推荐使用 RSS"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&name=为什么我会推荐使用 RSS&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/&t=为什么我会推荐使用 RSS"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2026
+    Mellvie
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/mellvie/EchoesFromShell.git">Projects</a></li><!--
+     --><!--
+       --><li><a href="/links/">Links</a></li><!--
+     --><!--
+       --><li><a href="/pgp/mellvie.asc">PGP</a></li><!--
+     --><!--
+       --><li><a href="/atom.xml">RSS</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Three.js (local) + Starfield -->
+
+<script src="/js/lib/three.min.js"></script>
+
+
+<script src="/js/starfield.js"></script>
+
+<!-- page transitions: fallback for browsers without View Transitions -->
+
+<script src="/js/page-transitions.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

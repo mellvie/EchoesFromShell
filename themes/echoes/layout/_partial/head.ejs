@@ -58,12 +58,26 @@
     <% if (theme.direction && theme.direction === 'rtl') { %>
       <%- css('css/rtl') %>
     <% } %>
-    <!-- rss -->
-    <% if (theme.rss === '' && config.feed && config.feed.path) { %>
-      <% theme.rss = config.feed.path %>
-    <% } %>
-    <% if (theme.rss) { %>
-      <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml" />
+    <!-- feeds (atom / rss2) -->
+    <%
+      var feedTypes = [];
+      var feedPaths = [];
+      if (config.feed && config.feed.enable !== false) {
+        if (Array.isArray(config.feed.type)) {
+          feedTypes = config.feed.type;
+          feedPaths = Array.isArray(config.feed.path) ? config.feed.path : [];
+        } else if (config.feed.type) {
+          feedTypes = [config.feed.type];
+          feedPaths = [config.feed.path || 'atom.xml'];
+        }
+      } else if (theme.rss && theme.rss !== '') {
+        feedTypes = ['atom'];
+        feedPaths = [theme.rss];
+      }
+      for (var fi = 0; fi < feedTypes.length && fi < feedPaths.length; fi++) {
+        var mime = feedTypes[fi] === 'rss2' ? 'application/rss+xml' : 'application/atom+xml';
+    %>
+      <link rel="alternate" href="<%= url_for(feedPaths[fi]) %>" title="<%= config.title %>" type="<%= mime %>" />
     <% } %>
 	<!-- mathjax -->
 	<% if (theme.mathjax.enabled) {%>

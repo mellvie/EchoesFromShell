@@ -1,0 +1,134 @@
+// ===================================================================
+// Outer Wilds · 星际拓荒配色方案 — Hexo Cactus 主题 v4.2
+//
+// v4.2 改动:
+//   - 挪麦铜饱和度提升 ~15%，更浓郁
+//   - 全局亮色调柔化（-5~10 亮度），不扎眼
+//   - 新增 hearthian 哈斯蓝（H≈208° 石板蓝），工业感
+//
+// 色系：
+//   campsite   H=50°   哈斯暖色（篝火、木料、帆布）
+//   nomai      H=33°   挪麦铜色（废墟、石材、铜器）*饱和增强*
+//   hearthian  H=208°  哈斯蓝（飞船、工具、蓝色木材）*新增*
+//   nomai-holo H=230°  全息蓝（投影、数据）
+//   cosmos     中性    虚空暗色（太空背景层级）
+//   quantum    H=245°  periwinkle 紫蓝（链接、交互）
+// ===================================================================
+
+// -------- 背景层级 --------
+$color-background = #070810       // --oh-cosmos-900 虚空黑
+$color-footer-mobile-1 = #12141E  // --oh-cosmos-800 卡片背景
+$color-footer-mobile-2 = #1B1D2A  // --oh-cosmos-700 弹窗背景
+$color-background-code = #1B1D2A  // --oh-cosmos-700 代码块背景
+
+// -------- 边框 & 滚动条 --------
+$color-border = rgba(201, 142, 62, 0.22)  // nomai-400 淡化（更饱和铜边）
+$color-scrollbar = #262837                // --oh-cosmos-600
+
+// -------- 元信息 & 辅助文字 --------
+$color-meta = #747685       // --oh-cosmos-300 占位文字
+$color-meta-code = #9A9BA8  // --oh-cosmos-200 代码元信息
+
+// -------- 链接 — 量子紫蓝（柔化） --------
+$color-link = #8A9EF0        // --oh-quantum-300 periwinkle (柔化)
+$color-link-hover = #E0BF90  // --oh-campsite-300 悬停暖色
+
+// -------- 正文 --------
+$color-text = #E8D2B5        // --oh-campsite-200 暖色正文 (柔化)
+
+// -------- 标题层级 --------
+$color-accent-3 = #D4A572    // --oh-campsite-400 — h4/h5/h6 / meta
+$color-accent-2 = #F4E8D8    // --oh-campsite-100 — h2/h3 (柔化)
+$color-accent-1 = #C98E3E    // --oh-nomai-400   — h1 / 导航 / 品牌铜色 (饱和+)
+
+// -------- 引用块 --------
+$color-quote = #DFB56A        // --oh-nomai-300 铜色引用 (饱和+)
+
+// -------- 语义颜色 --------
+$color-tag = #7CC8E0          // --oh-nomai-holo-300 全息蓝标签
+$color-success = #6FAD83      // --oh-success-400
+$color-warning = #E5A85A      // --oh-warning-400
+$color-error = #E86A6A        // --oh-error-400
+
+// -------- 语法高亮主题 --------
+$highlight = "outer-wilds"
+
+
+// ===================================================================
+// CSS 自定义属性
+// ===================================================================
+:root
+  // --- campsite 哈斯暖色 (H=50°) 柔化 ---
+  --oh-campsite-50: #F7F0E6
+  --oh-campsite-100: #F4E8D8
+  --oh-campsite-200: #E8D2B5
+  --oh-campsite-300: #E0BF90
+  --oh-campsite-400: #D4A572
+  --oh-campsite-500: #C08A52
+  --oh-campsite-600: #A57140
+  --oh-campsite-700: #895A32
+  --oh-campsite-800: #6B4528
+  --oh-campsite-900: #3A2515
+
+  // --- nomai 挪麦铜 (H≈33°) 饱和增强 ---
+  --oh-nomai-50: #FEF8F0
+  --oh-nomai-100: #F9ECD6
+  --oh-nomai-200: #EFD4A2
+  --oh-nomai-300: #DFB56A
+  --oh-nomai-400: #C98E3E
+  --oh-nomai-500: #B07530
+  --oh-nomai-600: #925E28
+  --oh-nomai-700: #754820
+  --oh-nomai-800: #583418
+  --oh-nomai-900: #331D0C
+
+  // 🆕 hearthian 哈斯蓝 (H≈208°) 石板蓝
+  --oh-hearthian-50: #F0F3F6
+  --oh-hearthian-100: #DDE4EA
+  --oh-hearthian-200: #B2C2D4
+  --oh-hearthian-300: #7C98B6
+  --oh-hearthian-400: #5D7E9E
+  --oh-hearthian-500: #47647F
+  --oh-hearthian-600: #334B63
+  --oh-hearthian-700: #233548
+  --oh-hearthian-800: #16212F
+  --oh-hearthian-900: #0C131B
+
+  // --- nomai-holo 全息蓝 (H=230°) ---
+  --oh-nomai-holo-100: #D9EFF7
+  --oh-nomai-holo-300: #7CC8E0
+  --oh-nomai-holo-500: #2D93B7
+  --oh-nomai-holo-700: #1A5C7C
+  --oh-nomai-holo-900: #0C2A3A
+
+  // --- cosmos 虚空暗色 (中性) ---
+  --oh-cosmos-50: #EAEBEE
+  --oh-cosmos-100: #C6C8CE
+  --oh-cosmos-200: #9D9FA9
+  --oh-cosmos-300: #747685
+  --oh-cosmos-400: #4E5060
+  --oh-cosmos-500: #353746
+  --oh-cosmos-600: #262837
+  --oh-cosmos-700: #1B1D2A
+  --oh-cosmos-800: #12141E
+  --oh-cosmos-900: #070810
+
+  // --- quantum 量子紫蓝 (H=245°) 柔化 ---
+  --oh-quantum-50: #F4F5FF
+  --oh-quantum-100: #E2E6FC
+  --oh-quantum-200: #B3BEF2
+  --oh-quantum-300: #8A9EF0
+  --oh-quantum-400: #6B82E0
+  --oh-quantum-500: #5068C8
+  --oh-quantum-600: #3A4FA8
+  --oh-quantum-700: #273A85
+  --oh-quantum-800: #172860
+  --oh-quantum-900: #0C1840
+
+  // 语义映射
+  --oh-link: #8A9EF0
+  --oh-accent: #C98E3E
+  --oh-text-body: #E8D2B5
+  --oh-text-title: #F4E8D8
+  --oh-bg-page: #070810
+  --oh-bg-card: #12141E

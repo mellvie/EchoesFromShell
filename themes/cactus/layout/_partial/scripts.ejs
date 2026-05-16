@@ -41,6 +41,11 @@
   </script>
 <% } %>
 <%- js('js/main') %>
+<!-- Three.js (local) + Starfield -->
+<%- js('js/lib/three.min') %>
+<%- js('js/starfield') %>
+<!-- page transitions: fallback for browsers without View Transitions -->
+<%- js('js/page-transitions') %>
 <!-- search -->
 <% if (config.search && (page.search || page.type === "search")){ %>
   <%- js('js/search.js') %>

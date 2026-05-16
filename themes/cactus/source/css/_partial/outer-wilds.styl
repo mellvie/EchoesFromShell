@@ -1,0 +1,181 @@
+// ===================================================================
+// Outer Wilds · 视觉增强 v4.2 — 挪麦铜基底 × 哈斯蓝撞色
+//
+// 色系用法：
+//   nomai 铜 → 标题/引用/分割线/品牌 (暖基底)
+//   hearthian 蓝 → 代码/斜体/TOC/边框 (冷点缀)
+//   quantum 紫蓝 → 链接/焦点 (柔化)
+//   nomai-holo 青 → 标签/选中 (全息投影)
+// ===================================================================
+
+// -------- View Transitions --------
+@css {
+  @view-transition { navigation: auto; }
+
+  ::view-transition-old(root) {
+    animation: 250ms ease-out both fade-out;
+  }
+  ::view-transition-new(root) {
+    animation: 250ms ease-in both fade-in;
+  }
+  @keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+// -------- 底色调 --------
+html
+  background-color: #0a0c18
+  border-top-color: $color-accent-1
+
+body
+  background-color: transparent !important
+
+// ========== 链接 ==========
+.content a
+  underline(5px, $color-meta)
+  &:hover
+    background-image: linear-gradient(transparent, transparent 4px, $color-link 4px, $color-link)
+
+// ========== 标题 — 挪麦铜 ==========
+article .content h2:before
+  color: $color-accent-1
+  opacity: 0.55
+  transition: opacity 0.2s
+
+article .content h2:hover:before
+  opacity: 1
+
+// ========== 引用块 — 挪麦铜边线 ==========
+article .content blockquote
+  position: relative
+  border-left: 3px solid $color-accent-1
+  padding-left: 1.2rem
+  margin-left: 0
+  background: linear-gradient(to right, rgba($color-accent-1, 0.06), transparent)
+  &:before
+    color: $color-accent-1
+    opacity: 0.5
+  p
+    color: $color-accent-2
+
+// ========== 斜体 — 哈斯蓝点缀 ==========
+em, cite, i, dfn
+  color: #7C98B6           // hearthian-300
+  font-style: italic
+
+// ========== 行内代码 — 哈斯蓝底 + 高饱和文字 ==========
+code:not(.highlight code):not(pre code)
+  background: rgba(93, 126, 158, 0.16)   // hearthian-400 @16%
+  border-color: rgba(93, 126, 158, 0.25)
+  color: #9AB8D4                          // hearthian-200 调亮
+
+// ========== 代码块 — 哈斯蓝暗底 ==========
+.highlight, pre
+  background: #121A24 !important           // hearthian-900 微调
+  border-color: rgba(93, 126, 158, 0.15) !important
+
+// ========== 图片 — 挪麦铜边框 ==========
+article .content img
+  border-radius: 6px
+  border: 1px solid rgba(201, 142, 62, 0.15)
+  transition: border-color 0.2s
+
+article .content img:hover
+  border-color: rgba(201, 142, 62, 0.35)
+
+// ========== 分割线 — 挪麦铜 ==========
+hr
+  border-color: $color-accent-1 !important
+  opacity: 0.25
+
+// ========== 标签 — 全息青 ==========
+.article-tag .tag-link,
+.article-category .category-link
+  color: $color-tag !important
+  &:hover
+    color: lighten($color-tag, 15%) !important
+
+// ========== 导航 — 量子紫蓝 ==========
+#header #nav ul a
+  transition: opacity 0.2s
+  &:hover
+    underline(5px, $color-link)
+
+// ========== 选中文本 — 全息青底 ==========
+::selection
+  background: rgba(45, 147, 183, 0.30)
+  color: #F4E8D8
+
+::-moz-selection
+  background: rgba(45, 147, 183, 0.30)
+  color: #F4E8D8
+
+// ========== 表格 — 挪麦铜表头 ==========
+th
+  color: $color-accent-1
+
+// ========== 滚动条 — 哈斯蓝暗色 ==========
+*::-webkit-scrollbar-thumb
+  background-color: #2A3A4E
+
+*::-webkit-scrollbar-thumb:hover
+  background-color: #3D5570
+
+// ========== 焦点 — 量子紫蓝 ==========
+a:focus-visible
+  outline: 2px solid $color-link
+  outline-offset: 2px
+
+// ========== 页脚 — 哈斯蓝分割线 ==========
+#footer
+  border-top: 1px solid rgba(93, 126, 158, 0.12)
+  padding-top: 1rem
+
+// ========== 右侧 TOC (全文概览) — 哈斯蓝主色 × 挪麦铜点缀 ==========
+#header-post #toc
+  // TOC 容器：右侧浮层
+  a
+    color: #7C98B6            // hearthian-300 基础蓝
+    transition: color 0.2s
+    &:hover
+      color: #B2C2D4          // hearthian-200 悬停亮蓝
+
+  // 二级标题 — 哈斯蓝主色
+  .toc-level-2
+    color: #8AA8C4            // hearthian-250 高饱和蓝
+    font-size: 0.8rem
+    &:before
+      color: $color-accent-1  // 挪麦铜 # 前缀
+      content: "#"
+
+  // 三级标题 — 哈斯蓝淡色
+  .toc-level-3
+    color: #5D7E9E            // hearthian-400
+    font-size: 0.7rem
+
+  // 四级标题 — 更深哈斯蓝
+  .toc-level-4
+    color: #47647F            // hearthian-500
+    font-size: 0.4rem
+
+// 移动端 TOC 底部
+#footer-post #toc-footer
+  a
+    color: #7C98B6
+    &:hover
+      color: #B2C2D4
+  .toc-level-2
+    color: #8AA8C4
+    &:before
+      color: $color-accent-1
+      content: "#"
+  .toc-level-3
+    color: #5D7E9E
+  .toc-level-4
+    color: #47647F

@@ -1,0 +1,57 @@
+// ===================================================================
+// Outer Wilds · 语法高亮 v4.2 — 哈斯蓝主色 + 挪麦铜点缀
+// ===================================================================
+
+.highlight
+  background: #121A24     // hearthian-900 微调, 暗石板蓝底
+  color: #B2C2D4           // hearthian-200 代码正文蓝
+
+  .code
+    // 注释 — 暗淡石板蓝
+    .comment, .quote
+      color: #5D7E9E       // hearthian-400
+      font-style: italic
+
+    // 关键字 — 全息青 (亮)
+    .keyword, .selector-tag, .literal, .type, .addition
+      color: #7CC8E0       // nomai-holo-300
+
+    // 数字 — 挪麦铜 (暖色撞色)
+    .number, .selector-attr, .selector-pseudo
+      color: #DFB56A       // nomai-300
+
+    // 字符串 — 飞船日志绿
+    .string, .doctag, .regexp
+      color: #95C7A5       // success-300
+
+    // 函数名 — 哈斯蓝亮色
+    .title, .name, .section, .built_in
+      color: #DDE4EA       // hearthian-100 最亮蓝
+
+    // 变量 — 哈斯蓝中调
+    .variable, .template-variable, .selector-id, .class .title
+      color: #B2C2D4       // hearthian-200
+
+    // 粗体
+    .section, .name, .strong
+      font-weight: bold
+
+    // 符号 — 量子紫蓝
+    .symbol, .bullet, .subst, .meta, .link
+      color: #8A9EF0       // quantum-300
+
+    // 删除 — 错误红
+    .deletion
+      color: #E86A6A
+
+    // 公式背景
+    .formula
+      background: #0C131B  // hearthian-900
+
+    // 属性 — 挪麦铜 (暖色撞色)
+    .attr, .attribute
+      color: #DFB56A       // nomai-300
+
+    // 斜体
+    .emphasis
+      font-style: italic

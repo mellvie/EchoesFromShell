@@ -98,7 +98,7 @@ logo:
   height: 50
   url: /images/astro_nomai.png
   gravatar: false
-  grayout: true
+  grayout: false
 
 # Customize the favicons.
 # Cactus supports a limited set of the three most important icons:

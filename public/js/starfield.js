@@ -48,14 +48,22 @@
     // twinkleAmp: 0=完全不闪, 1=全黑全亮交替（远星建议 >0.5, 近星建议 <0.2）
     // speedMin/Max: 闪烁速度范围（单位：弧度/秒）
     groups: [
-      { name: 'deep',  ratio: 0.35, size: 1.5, twinkleAmp: 0.85, speedMin: 0.22, speedMax: 0.55,
-        desc: '最远最小 — 大量微小闪烁星，模拟大气折射' },
-      { name: 'far',   ratio: 0.30, size: 3.5, twinkleAmp: 0.50, speedMin: 0.35, speedMax: 0.75,
-        desc: '中远 — 明显的点状星，适度闪烁' },
-      { name: 'mid',   ratio: 0.22, size: 6.5, twinkleAmp: 0.20, speedMin: 0.45, speedMax: 1.00,
-        desc: '中距 — 较亮，微弱闪烁' },
-      { name: 'near',  ratio: 0.13, size: 11.0, twinkleAmp: 0.06, speedMin: 0.55, speedMax: 1.20,
-        desc: '最近 — 少量大亮星，几乎不闪' },
+      {
+        name: 'deep', ratio: 0.35, size: 1.5, twinkleAmp: 0.90, speedMin: 0.22, speedMax: 0.55,
+        desc: '最远最小 — 大量微小闪烁星，模拟大气折射'
+      },
+      {
+        name: 'far', ratio: 0.30, size: 3.5, twinkleAmp: 0.70, speedMin: 0.35, speedMax: 0.75,
+        desc: '中远 — 明显的点状星，适度闪烁'
+      },
+      {
+        name: 'mid', ratio: 0.22, size: 6.5, twinkleAmp: 0.45, speedMin: 0.45, speedMax: 1.00,
+        desc: '中距 — 较亮，微弱闪烁'
+      },
+      {
+        name: 'near', ratio: 0.13, size: 11.0, twinkleAmp: 0.06, speedMin: 0.55, speedMax: 1.20,
+        desc: '最近 — 少量大亮星，几乎不闪'
+      },
     ],
 
     // 每组基础透明度范围（随机在此范围内）
@@ -63,7 +71,7 @@
     groupOpacityMax: 1.0,
 
     // 闪烁最低亮度（即使全黑阶段也不完全消失，0=全黑, 1=不闪）
-    twinkleMinBrightness: 0.10,
+    twinkleMinBrightness: 0.05,
 
 
     // ========== 特殊色星 ==========
@@ -132,7 +140,7 @@
       // 颜色列表（RGB 0-255）
       colors: [
         [80, 60, 140], [40, 70, 130], [100, 50, 90],
-        [30, 80, 110], [90, 40, 60],  [20, 60, 100],
+        [30, 80, 110], [90, 40, 60], [20, 60, 100],
         [140, 50, 40],  // 暖色
         [130, 70, 30],  // 暖铜
       ],
@@ -163,8 +171,8 @@
       enabled: true,
 
       // 出现间隔范围（秒）
-      intervalMin: 4,
-      intervalMax: 13,
+      intervalMin: 3,
+      intervalMax: 12,
 
       // 出现距离范围（世界单位）
       distMin: 800,
@@ -185,11 +193,11 @@
 
       // 样式预设
       styles: [
-        { name:'classic', head:[1.0,0.88,0.65], trail:[1.0,0.75,0.45], headSize:14, trailSegments:3, trailWidth:3.5 },
-        { name:'blue',    head:[0.60,0.78,1.0], trail:[0.45,0.65,1.0], headSize:12, trailSegments:3, trailWidth:3.0 },
-        { name:'green',   head:[0.70,1.0,0.75], trail:[0.50,0.85,0.60], headSize:13, trailSegments:3, trailWidth:3.2 },
-        { name:'spark',   head:[1.0,0.95,0.80], trail:[1.0,0.85,0.55], headSize:18, trailSegments:4, trailWidth:4.5 },
-        { name:'purple',  head:[0.80,0.65,1.0], trail:[0.60,0.45,0.95], headSize:12, trailSegments:3, trailWidth:3.0 },
+        { name: 'classic', head: [1.0, 0.88, 0.65], trail: [1.0, 0.75, 0.45], headSize: 14, trailSegments: 3, trailWidth: 3.5 },
+        { name: 'blue', head: [0.60, 0.78, 1.0], trail: [0.45, 0.65, 1.0], headSize: 12, trailSegments: 3, trailWidth: 3.0 },
+        { name: 'green', head: [0.70, 1.0, 0.75], trail: [0.50, 0.85, 0.60], headSize: 13, trailSegments: 3, trailWidth: 3.2 },
+        { name: 'spark', head: [1.0, 0.95, 0.80], trail: [1.0, 0.85, 0.55], headSize: 18, trailSegments: 4, trailWidth: 4.5 },
+        { name: 'purple', head: [0.80, 0.65, 1.0], trail: [0.60, 0.45, 0.95], headSize: 12, trailSegments: 3, trailWidth: 3.0 },
       ],
 
       // 尾节间距 & 尺寸衰减
@@ -214,8 +222,8 @@
       // 速度 & 生命（彗星更慢更持久）
       speedMin: 220,
       speedMax: 420,
-      lifeMin: 4.5,
-      lifeMax: 8.0,
+      lifeMin: 8.0,
+      lifeMax: 16.0,
 
       // 淡入淡出
       fadeInRatio: 0.12,
@@ -226,41 +234,54 @@
 
       // 样式预设
       styles: [
-        { name:'gold',
-          head:[1.0,0.95,0.80], dust:[1.0,0.82,0.55], ion:[0.55,0.72,1.0],
-          headSize:38, dustSegments:12, ionSegments:10, dustWidth:7.0, ionWidth:3.5, ionStrength:1.0,
-          desc:'经典金色彗星，尘埃尾为主' },
-        { name:'ice',
-          head:[0.65,0.82,1.0], dust:[0.55,0.70,0.85], ion:[0.35,0.55,1.0],
-          headSize:34, dustSegments:8, ionSegments:14, dustWidth:5.5, ionWidth:4.0, ionStrength:1.8,
-          desc:'冰蓝彗星，离子尾主导' },
-        { name:'grand',
-          head:[1.0,0.96,0.85], dust:[1.0,0.88,0.65], ion:[0.50,0.68,1.0],
-          headSize:48, dustSegments:16, ionSegments:14, dustWidth:8.0, ionWidth:4.5, ionStrength:1.3,
-          desc:'壮丽大彗星，双尾均衡' },
-        { name:'emerald',
-          head:[0.55,1.0,0.80], dust:[0.45,0.85,0.65], ion:[0.30,0.75,0.90],
-          headSize:35, dustSegments:11, ionSegments:10, dustWidth:6.5, ionWidth:3.5, ionStrength:1.0,
-          desc:'翠绿彗星，罕见' },
-        { name:'crimson',
-          head:[1.0,0.60,0.40], dust:[0.95,0.45,0.30], ion:[0.70,0.40,0.55],
-          headSize:36, dustSegments:10, ionSegments:8, dustWidth:6.0, ionWidth:3.0, ionStrength:0.7,
-          desc:'赤红彗星，凶兆感' },
+        {
+          name: 'gold',
+          head: [1.0, 0.95, 0.80], dust: [1.0, 0.82, 0.55], ion: [0.55, 0.72, 1.0],
+          headSize: 38, dustSegments: 12, ionSegments: 10, dustWidth: 7.0, ionWidth: 3.5, ionStrength: 1.0,
+          desc: '经典金色彗星，尘埃尾为主'
+        },
+        {
+          name: 'ice',
+          head: [0.65, 0.82, 1.0], dust: [0.55, 0.70, 0.85], ion: [0.35, 0.55, 1.0],
+          headSize: 34, dustSegments: 8, ionSegments: 14, dustWidth: 5.5, ionWidth: 4.0, ionStrength: 1.8,
+          desc: '冰蓝彗星，离子尾主导'
+        },
+        {
+          name: 'grand',
+          head: [1.0, 0.96, 0.85], dust: [1.0, 0.88, 0.65], ion: [0.50, 0.68, 1.0],
+          headSize: 48, dustSegments: 16, ionSegments: 14, dustWidth: 8.0, ionWidth: 4.5, ionStrength: 1.3,
+          desc: '壮丽大彗星，双尾均衡'
+        },
+        {
+          name: 'emerald',
+          head: [0.55, 1.0, 0.80], dust: [0.45, 0.85, 0.65], ion: [0.30, 0.75, 0.90],
+          headSize: 35, dustSegments: 11, ionSegments: 10, dustWidth: 6.5, ionWidth: 3.5, ionStrength: 1.0,
+          desc: '翠绿彗星，罕见'
+        },
+        {
+          name: 'crimson',
+          head: [1.0, 0.60, 0.40], dust: [0.95, 0.45, 0.30], ion: [0.70, 0.40, 0.55],
+          headSize: 36, dustSegments: 10, ionSegments: 8, dustWidth: 6.0, ionWidth: 3.0, ionStrength: 0.7,
+          desc: '赤红彗星，凶兆感'
+        },
       ],
 
       // 尘埃尾参数
       dustTail: {
-        segmentGap: 16,        // 每节间距
-        baseLength: 55,        // 第一节长度
+        segmentGap: 12,        // 每节间距
+        baseLength: 50,        // 第一节长度
+        curvePower: 10,        // 弯曲强度：尘埃受轨道惯性形成弧形
       },
 
       // 离子尾参数
       ionTail: {
-        segmentGap: 22,        // 每节间距
+        segmentGap: 16,        // 每节间距
         baseLength: 40,        // 第一节长度
-        sideOffset: 10,        // 离子尾侧向偏移基数
-        curvePower: 0.4,       // 弯曲强度（越大越弯）
-        angleOffset: 0.08,     // 方向偏移量
+        sideScale: 1.8,        // 初始偏移系数（×dustWidth）
+        curvePower: 25,        // 递增偏移：t² × 此值，始终超在尘埃尾外侧
+        directionBias: 0.12,   // 方向偏角（模拟太阳风）
+        waveFreq: 2,         // 波动频率
+        waveAmp: 1.0,          // 波动振幅
       },
     },
 
@@ -287,14 +308,16 @@
   renderer.domElement.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;';
   document.body.insertBefore(renderer.domElement, document.body.firstChild);
 
+
+
   // ---- 纹理 ----
   function makeStarTex() {
     var s = 64, c = document.createElement('canvas');
     c.width = c.height = s;
     var ctx = c.getContext('2d');
-    var grad = ctx.createRadialGradient(s/2, s/2, 0, s/2, s/2, s/2);
+    var grad = ctx.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
     grad.addColorStop(0, 'rgba(255,255,255,1)');
-    grad.addColorStop(0.15,'rgba(255,255,255,0.85)');
+    grad.addColorStop(0.15, 'rgba(255,255,255,0.85)');
     grad.addColorStop(0.5, 'rgba(255,255,255,0.10)');
     grad.addColorStop(1, 'rgba(255,255,255,0)');
     ctx.fillStyle = grad; ctx.fillRect(0, 0, s, s);
@@ -306,11 +329,11 @@
     var s = 256, c = document.createElement('canvas');
     c.width = c.height = s;
     var ctx = c.getContext('2d');
-    var grad = ctx.createRadialGradient(s/2, s/2, 0, s/2, s/2, s/2);
-    grad.addColorStop(0, 'rgba('+ir+','+ig+','+ib+',0.10)');
-    grad.addColorStop(0.25,'rgba('+ir+','+ig+','+ib+',0.04)');
-    grad.addColorStop(0.6,'rgba('+ir+','+ig+','+ib+',0.015)');
-    grad.addColorStop(1, 'rgba('+ir+','+ig+','+ib+',0)');
+    var grad = ctx.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+    grad.addColorStop(0, 'rgba(' + ir + ',' + ig + ',' + ib + ',0.10)');
+    grad.addColorStop(0.25, 'rgba(' + ir + ',' + ig + ',' + ib + ',0.04)');
+    grad.addColorStop(0.6, 'rgba(' + ir + ',' + ig + ',' + ib + ',0.015)');
+    grad.addColorStop(1, 'rgba(' + ir + ',' + ig + ',' + ib + ',0)');
     ctx.fillStyle = grad; ctx.fillRect(0, 0, s, s);
     return new THREE.CanvasTexture(c);
   }
@@ -318,7 +341,7 @@
   // ---- 光谱 ----
   var SPECTRAL = [];
   CONFIG.spectralWeights.forEach(function(w) {
-    var n = w[3]; while (n--) SPECTRAL.push([w[0]/255, w[1]/255, w[2]/255]);
+    var n = w[3]; while (n--) SPECTRAL.push([w[0] / 255, w[1] / 255, w[2] / 255]);
   });
   function pickSpec() { return SPECTRAL[Math.floor(Math.random() * SPECTRAL.length)]; }
 
@@ -336,9 +359,9 @@
     var col = new Float32Array(count * 3);
     for (var i = 0; i < count; i++) {
       var p = randomHemispherePos(CONFIG.zMin, CONFIG.zMax);
-      pos[i*3] = p[0]; pos[i*3+1] = p[1]; pos[i*3+2] = p[2];
+      pos[i * 3] = p[0]; pos[i * 3 + 1] = p[1]; pos[i * 3 + 2] = p[2];
       var spec = pickSpec();
-      col[i*3] = spec[0]; col[i*3+1] = spec[1]; col[i*3+2] = spec[2];
+      col[i * 3] = spec[0]; col[i * 3 + 1] = spec[1]; col[i * 3 + 2] = spec[2];
     }
     return { pos: pos, col: col };
   }
@@ -396,9 +419,9 @@
     var col = new Float32Array(count * 3);
     for (var i = 0; i < count; i++) {
       var p = randomHemispherePos(cfg.distMin, cfg.distMax);
-      pos[i*3] = p[0]; pos[i*3+1] = p[1]; pos[i*3+2] = p[2];
+      pos[i * 3] = p[0]; pos[i * 3 + 1] = p[1]; pos[i * 3 + 2] = p[2];
       var sc = cfg.colors[Math.floor(Math.random() * cfg.colors.length)];
-      col[i*3] = sc[0]; col[i*3+1] = sc[1]; col[i*3+2] = sc[2];
+      col[i * 3] = sc[0]; col[i * 3 + 1] = sc[1]; col[i * 3 + 2] = sc[2];
     }
     var geom = new THREE.BufferGeometry();
     geom.setAttribute('position', new THREE.BufferAttribute(pos, 3));
@@ -461,10 +484,10 @@
     var ctx = c.getContext('2d');
     var grad = ctx.createLinearGradient(0, 0, w, 0);
     grad.addColorStop(0, 'rgba(255,255,255,0)');
-    grad.addColorStop(0.15,'rgba(255,255,255,0.05)');
-    grad.addColorStop(0.4,'rgba(255,255,255,0.25)');
-    grad.addColorStop(0.7,'rgba(255,255,255,0.7)');
-    grad.addColorStop(1,'rgba(255,255,255,1)');
+    grad.addColorStop(0.15, 'rgba(255,255,255,0.05)');
+    grad.addColorStop(0.4, 'rgba(255,255,255,0.25)');
+    grad.addColorStop(0.7, 'rgba(255,255,255,0.7)');
+    grad.addColorStop(1, 'rgba(255,255,255,1)');
     ctx.fillStyle = grad; ctx.fillRect(0, 0, w, h);
     return new THREE.CanvasTexture(c);
   }
@@ -476,11 +499,11 @@
     var ctx = c.getContext('2d');
     var grad = ctx.createLinearGradient(0, 0, w, 0);
     grad.addColorStop(0, 'rgba(180,200,255,0)');
-    grad.addColorStop(0.1,'rgba(180,200,255,0.03)');
-    grad.addColorStop(0.3,'rgba(200,220,255,0.12)');
-    grad.addColorStop(0.6,'rgba(220,235,255,0.35)');
-    grad.addColorStop(0.85,'rgba(240,245,255,0.7)');
-    grad.addColorStop(1,'rgba(255,255,255,1)');
+    grad.addColorStop(0.1, 'rgba(180,200,255,0.03)');
+    grad.addColorStop(0.3, 'rgba(200,220,255,0.12)');
+    grad.addColorStop(0.6, 'rgba(220,235,255,0.35)');
+    grad.addColorStop(0.85, 'rgba(240,245,255,0.7)');
+    grad.addColorStop(1, 'rgba(255,255,255,1)');
     ctx.fillStyle = grad; ctx.fillRect(0, 0, w, h);
     return new THREE.CanvasTexture(c);
   }
@@ -506,9 +529,9 @@
     var b = [Math.cos(endAngle) * Rext, Math.sin(endAngle) * Rext + cy, -spawnDist];
 
     var dx = b[0] - a[0], dy = b[1] - a[1], dz = b[2] - a[2];
-    var len = Math.sqrt(dx*dx + dy*dy + dz*dz);
+    var len = Math.sqrt(dx * dx + dy * dy + dz * dz);
     if (len < 1) return;
-    var nx = dx/len, ny = dy/len, nz = dz/len;
+    var nx = dx / len, ny = dy / len, nz = dz / len;
 
     var style = cfg.styles[Math.floor(Math.random() * cfg.styles.length)];
 
@@ -525,8 +548,15 @@
     var trailParts = [];
 
     if (isComet) {
-      // 尘埃尾
+      // ---- 单位法向量（垂直运动方向）用于侧向偏移 ----
+      var perpX = -ny, perpY = nx;
+      var perpLen = Math.sqrt(perpX * perpX + perpY * perpY);
+      if (perpLen > 0.001) { perpX /= perpLen; perpY /= perpLen; }
+
+      // ---- 尘埃尾：沿轨迹滞后，宽阔弧形 ----
+      // 物理：尘埃受太阳辐射压，滞后于轨道形成宽弧
       var dustColor = new THREE.Color(style.dust[0], style.dust[1], style.dust[2]);
+      var dtCfg = CONFIG.comets.dustTail;
       for (var di = 0; di < style.dustSegments; di++) {
         var dMat = new THREE.SpriteMaterial({
           map: cometTex, blending: THREE.AdditiveBlending,
@@ -534,18 +564,35 @@
         });
         var dSprite = new THREE.Sprite(dMat);
         dSprite.position.copy(head.position);
-        var dSz = CONFIG.comets.dustTail.baseLength - di * (CONFIG.comets.dustTail.baseLength / style.dustSegments);
-        dSprite.scale.set(dSz, style.dustWidth - di * (style.dustWidth / style.dustSegments), 1);
-        dMat.rotation = Math.atan2(ny, nx);
+        var t = di / (style.dustSegments - 1 || 1);
+        var dSz = dtCfg.baseLength * (1 - t * 0.75);
+        var dW = style.dustWidth * (1 - t * 0.65);
+        dSprite.scale.set(Math.max(dSz, 2), Math.max(dW, 1.5), 1);
+        // 弯曲：垂直偏移随距离递增（二次），模拟轨道惯性
+        var dustCurve = t * t * dtCfg.curvePower;
+        var dustSideX = perpX * dustCurve;
+        var dustSideY = perpY * dustCurve;
+        // 每节旋转跟随实际弯曲方向
+        var bendNx = nx + (perpX * dustCurve * 0.03);
+        var bendNy = ny + (perpY * dustCurve * 0.03);
+        dMat.rotation = Math.atan2(bendNy, bendNx);
         scene.add(dSprite);
-        trailParts.push({ sprite: dSprite, mat: dMat, offset: (di+1) * CONFIG.comets.dustTail.segmentGap, sideX:0, sideY:0, sideZ:0 });
+        trailParts.push({
+          sprite: dSprite, mat: dMat,
+          offset: (di + 1) * dtCfg.segmentGap + style.headSize * 0.2,
+          sideX: dustSideX, sideY: dustSideY, sideZ: 0
+        });
       }
-      // 离子尾
-      var perpX = -ny, perpY = nx;
-      var perpLen = Math.sqrt(perpX*perpX + perpY*perpY);
-      if (perpLen > 0.001) { perpX /= perpLen; perpY /= perpLen; }
+
+      // ---- 离子尾：窄蓝，递增偏移，始终在尘埃尾外侧 ----
+      // 物理：离子被太阳风径直吹离，距离越远偏角越大
       var ionColor = new THREE.Color(style.ion[0], style.ion[1], style.ion[2]);
-      var it = CONFIG.comets.ionTail;
+      var itCfg = CONFIG.comets.ionTail;
+      // 方向偏角：朝侧向偏转，模拟太阳风
+      var ionNX = nx - perpX * itCfg.directionBias * style.ionStrength;
+      var ionNY = ny - perpY * itCfg.directionBias * style.ionStrength;
+      var ionLen = Math.sqrt(ionNX * ionNX + ionNY * ionNY);
+      if (ionLen > 0.001) { ionNX /= ionLen; ionNY /= ionLen; }
       for (var ii = 0; ii < style.ionSegments; ii++) {
         var iMat = new THREE.SpriteMaterial({
           map: cometTex, blending: THREE.AdditiveBlending,
@@ -553,17 +600,29 @@
         });
         var iSprite = new THREE.Sprite(iMat);
         iSprite.position.copy(head.position);
-        var iSz = it.baseLength - ii * (it.baseLength / style.ionSegments);
-        iSprite.scale.set(iSz, style.ionWidth - ii * (style.ionWidth / style.ionSegments), 1);
-        iMat.rotation = Math.atan2(ny - perpY * it.angleOffset, nx - perpX * it.angleOffset);
+        var t2 = ii / (style.ionSegments - 1 || 1);
+        var iSz = itCfg.baseLength * (1 - t2 * 0.85);
+        var iW = style.ionWidth * (1 - t2 * 0.6);
+        iSprite.scale.set(Math.max(iSz, 2), Math.max(iW, 1.5), 1);
+        // 渐进分离：从 t=0 处贴合彗核，线性 + 二次加速度增长
+        var baseSep = style.dustWidth * itCfg.sideScale * style.ionStrength;
+        var ionCurve = t2 * t2 * itCfg.curvePower;
+        var ionLateral = baseSep * t2 + ionCurve;  // t=0 贴头，t=1 分离最大
+        var ionSideX = perpX * ionLateral;
+        var ionSideY = perpY * ionLateral;
+        // 微波动（正弦波纹）
+        var wave = Math.sin(ii * itCfg.waveFreq) * itCfg.waveAmp * style.ionStrength;
+        var waveX = perpX * wave;
+        var waveY = perpY * wave;
+        // 每节旋转沿离子尾方向
+        iMat.rotation = Math.atan2(ionNY, ionNX);
         scene.add(iSprite);
-        var curve = ii * ii * it.curvePower;
         trailParts.push({
           sprite: iSprite, mat: iMat,
-          offset: (ii+1) * it.segmentGap,
-          sideX: (perpX * it.sideOffset * style.ionStrength + perpX * curve),
-          sideY: (perpY * it.sideOffset * style.ionStrength + perpY * curve),
-          sideZ: -ii * 2,
+          offset: (ii + 1) * itCfg.segmentGap + style.headSize * 0.3,
+          sideX: ionSideX + waveX,
+          sideY: ionSideY + waveY,
+          sideZ: 0
         });
       }
     } else {
@@ -581,7 +640,7 @@
         tSprite.scale.set(tailSz, tailH, 1);
         tMat.rotation = Math.atan2(ny, nx);
         scene.add(tSprite);
-        trailParts.push({ sprite: tSprite, mat: tMat, offset: (mi+1) * CONFIG.meteors.trailSegmentGap, sideX:0, sideY:0, sideZ:0 });
+        trailParts.push({ sprite: tSprite, mat: tMat, offset: (mi + 1) * CONFIG.meteors.trailSegmentGap, sideX: 0, sideY: 0, sideZ: 0 });
       }
     }
 

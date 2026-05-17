@@ -100,7 +100,7 @@ https://echoesfromshell.netlify.app/rss2.xml
 
 ### 浏览器
 
-点击首页的 **RSS 图标**（📡），或直接访问 `/rss2.xml`，浏览器如果有 RSS 扩展会自动识别。
+点击首页的 **RSS 图标**，或直接访问 `/rss2.xml`，浏览器如果有 RSS 扩展会自动识别。
 
 ### 我的阅读器
 

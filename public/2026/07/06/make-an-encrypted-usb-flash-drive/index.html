@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="前言有段时间闲来无事，我开始整理文件，作为计科人，我对数据还是较为敏感的。整理数据未免要和存储打交道，于是整个工作就是把不重要的数据清理或者组织存放，重要的数据集合起来并且备份。然而在数据备份时，我意识到，重要数据除了照片视频之外，总的数据量并不大，正好手头有一个U盘，仅16GB，但存放文本类和少量音频、图像内容是充足的。并且这个U盘也偶尔随身携带，有时候装着 PPT , Excel , PDF">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在U盘建立一个加密存储库">
+<meta property="og:url" content="https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/index.html">
+<meta property="og:site_name" content="EchoesFromShell">
+<meta property="og:description" content="前言有段时间闲来无事，我开始整理文件，作为计科人，我对数据还是较为敏感的。整理数据未免要和存储打交道，于是整个工作就是把不重要的数据清理或者组织存放，重要的数据集合起来并且备份。然而在数据备份时，我意识到，重要数据除了照片视频之外，总的数据量并不大，正好手头有一个U盘，仅16GB，但存放文本类和少量音频、图像内容是充足的。并且这个U盘也偶尔随身携带，有时候装着 PPT , Excel , PDF">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-07-06T08:29:32.000Z">
+<meta property="article:modified_time" content="2026-07-06T10:29:51.642Z">
+<meta property="article:author" content="Mellvie">
+<meta property="article:tag" content="encryption">
+<meta property="article:tag" content="privacy">
+<meta property="article:tag" content="tools">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>在U盘建立一个加密存储库</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- feeds (atom / rss2) -->
+    
+      <link rel="alternate" href="/atom.xml" title="EchoesFromShell" type="application/atom+xml" />
+    
+      <link rel="alternate" href="/rss2.xml" title="EchoesFromShell" type="application/rss+xml" />
+    
+	<!-- mathjax -->
+	
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			tex2jax: {
+			  skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+			  inlineMath: [['$','$']]
+			}
+		  });
+		</script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/mellvie/EchoesFromShell.git">Projects</a></li><!--
+     --><!--
+       --><li><a href="/links/">Links</a></li><!--
+     --><!--
+       --><li><a href="/pgp/mellvie.asc">PGP</a></li><!--
+     --><!--
+       --><li><a href="/atom.xml">RSS</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/05/16/rss-the-feed-that-never-died/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&text=在U盘建立一个加密存储库"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&is_video=false&description=在U盘建立一个加密存储库"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=在U盘建立一个加密存储库&body=Check out this article: https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&name=在U盘建立一个加密存储库&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&t=在U盘建立一个加密存储库"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">加密软件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">2.1.</span> <span class="toc-text">选择</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA"><span class="toc-number">3.</span> <span class="toc-text">展示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="toc-number">3.1.</span> <span class="toc-text">基本内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">3.2.</span> <span class="toc-text">加密客户端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E4%BB%93%E5%BA%93"><span class="toc-number">3.3.</span> <span class="toc-text">加密仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86"><span class="toc-number">3.4.</span> <span class="toc-text">解密</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">制作方法</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        在U盘建立一个加密存储库
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Mellvie</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-07-06T08:29:32.000Z" class="dt-published" itemprop="datePublished">2026-07-06</time>
+        
+        (Updated: <time datetime="2026-07-06T10:29:51.642Z" class="dt-updated" itemprop="dateModified">2026-07-06</time>)
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/encryption/" rel="tag">encryption</a>, <a class="p-category" href="/tags/privacy/" rel="tag">privacy</a>, <a class="p-category" href="/tags/tools/" rel="tag">tools</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有段时间闲来无事，我开始整理文件，作为计科人，我对数据还是较为敏感的。整理数据未免要和存储打交道，于是整个工作就是把不重要的数据清理或者组织存放，重要的数据集合起来并且备份。然而在数据备份时，我意识到，重要数据除了照片视频之外，总的数据量并不大，正好手头有一个U盘，仅<strong>16GB</strong>，但存放文本类和少量音频、图像内容是充足的。并且这个U盘也偶尔随身携带，有时候装着 <code>PPT</code> , <code>Excel</code> , <code>PDF</code> 之类的小文件较为方便。</p>
+<blockquote>
+<p>除了公开可见的为了便捷而存放进去的文件，我如果将我的重要文件也存放其中，必然要保证数据安全，即使我意外丢失，也不会数据泄漏，于是这篇文章就是我对我的重要数据存放在U盘中使用的安全措施。</p>
+</blockquote>
+<h1 id="加密软件"><a href="#加密软件" class="headerlink" title="加密软件"></a>加密软件</h1><p>看来看去，最后选择使用的加密软件是 <code>Cryptomator</code>。</p>
+<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>在确定使用 <code>Cryptomator</code> 之前，我是考虑过把U盘本身直接加密成一个加密驱动器的，然而这种方式损失了U盘的易用性，一般文件放进去单纯为了转移和使用的时候，并不需要我输入密码才能操作，作为一个普通U盘是它应有的身份。<br>于是加密全盘的方案被舍弃。</p>
+<p>选择 <code>Cryptomator</code>正是看上了其开源的特性，透明的加密方法，和强大的功能,以及其跨平台能力。</p>
+<p>因此这个方式更为合适，U盘存储一般文件就正常存放，我的重要文件存储在其中的时候就需要加密存放。即用<code>Cryptomator</code>建立一个加密仓库，放到U盘中，只有需要处理加密文件的时候使用<code>Cryptomator</code>来解密那个仓库并挂载，在一般情况使用的时候，直接访问U盘就行。在操作加密仓库的时候，只要挂载了，就能像普通的驱动器一样使用，创建文件夹，复制粘贴等，加密仓库是具有普通的文件结构的。</p>
+<h1 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h1><p>这是我的U盘：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">❯ lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,FSTYPE,LABEL /dev/sdb</span><br><span class="line">NAME    SIZE TYPE MOUNTPOINT             FSTYPE LABEL</span><br><span class="line">sdb    15.2G disk</span><br><span class="line">└─sdb1 15.2G part /media/jiesi/nomai_doc vfat   nomai_doc</span><br><span class="line"></span><br><span class="line">❯ <span class="built_in">df</span> -h /media/jiesi/nomai_doc</span><br><span class="line">文件系统        大小  已用  可用 已用% 挂载点</span><br><span class="line">/dev/sdb1        16G  303M   15G    2% /media/jiesi/nomai_doc</span><br></pre></td></tr></table></figure>
+
+<p>其根目录的内容如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">ls</span> -la /media/jiesi/nomai_doc</span><br><span class="line">总计 60</span><br><span class="line">drwxr-xr-x  5 jiesi jiesi 8192  1月  1  1970 .</span><br><span class="line">drwxr-x---+ 3 root  root  4096  7月  6 16:29 ..</span><br><span class="line">-rw-r--r--  1 jiesi jiesi  203  6月 15 22:50 请阅读.txt</span><br><span class="line">drwxr-xr-x  2 jiesi jiesi 8192  6月 13 13:42 cryptomator</span><br><span class="line">drwxr-xr-x  3 jiesi jiesi 8192  6月 12 23:51 encrypted_data</span><br><span class="line">-rw-r--r--  1 jiesi jiesi  445  6月 15 22:53 readme.md</span><br><span class="line">-rw-r--r--  1 jiesi jiesi  242  6月 15 22:52 README.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h2><p>可以看到，U盘下有一些裸文件，如<code>TXT</code>,<code>markdown</code>，这些文件可以直接打开。<br>我放了一些文本文件，当我意外丢失了这个U盘，捡到者查看这些文件便可获取到我的联系方式。<br>大概内容如下：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">❯ cat README.txt</span><br><span class="line"><span class="section"># This USB Flash Drive Is Not Discarded. Please Return It to Me.</span></span><br><span class="line"></span><br><span class="line">This USB flash drive is lost. Contact me if you get it unexpectedly.</span><br><span class="line">Significant files are encrypted. No need to try to crack.</span><br><span class="line">Email: mellviese@163.com</span><br><span class="line">Phone: <span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
+
+<p>并且由于重要文件加密放在仓库里，恶意持有者无法从中获取到任何信息。</p>
+<h2 id="加密客户端"><a href="#加密客户端" class="headerlink" title="加密客户端"></a>加密客户端</h2><p><code>cryptomator</code> 文件夹内放的是多个平台的客户端，目的并不是给捡到者提供访问我加密数据的工具，而是在不同机器上便利我使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/media/jiesi/nomai_doc                                                                                                                                                               17:44:10</span><br><span class="line">❯ <span class="built_in">ls</span> -lah cryptomator</span><br><span class="line">总计 303M</span><br><span class="line">drwxr-xr-x 2 jiesi jiesi 8.0K  6月 13 13:42 .</span><br><span class="line">drwxr-xr-x 4 jiesi jiesi 8.0K  1月  1  1970 ..</span><br><span class="line">-rw-r--r-- 1 jiesi jiesi  27M  6月 12 23:28 Cryptomator-1.12.3.apk</span><br><span class="line">-rw-r--r-- 1 jiesi jiesi  59M  6月 12 23:43 cryptomator-1.19.2-aarch64.AppImage</span><br><span class="line">-rw-r--r-- 1 jiesi jiesi  59M  6月 13 13:13 Cryptomator-1.19.2-arm64.dmg</span><br><span class="line">-rwxr-xr-x 1 jiesi jiesi  55M  6月 12 23:35 Cryptomator-1.19.2-x64.exe</span><br><span class="line">-rw-r--r-- 1 jiesi jiesi  59M  6月 12 23:47 cryptomator-1.19.2-x86_64.AppImage</span><br><span class="line">-rwxr-xr-x 1 jiesi jiesi  46M  6月 13 13:41 cryptomator-portable-win64-1.15.2-15-setup.exe</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，在<code>Windows</code>，<code>Mac OS</code>, <code>Linux</code>, <code>Android</code>上皆有相应客户端，虽然不一定用的上，但有备无患。</p>
+<h2 id="加密仓库"><a href="#加密仓库" class="headerlink" title="加密仓库"></a>加密仓库</h2><p><code>encrypted_data</code> 文件夹便是我的加密仓库所在。直接查看的时候显示的如下内容。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">❯ tree encrypted_data -L 3</span><br><span class="line">encrypted_data</span><br><span class="line">└── nomai_secret_data</span><br><span class="line">    ├── 重要.rtf</span><br><span class="line">    ├── d</span><br><span class="line">    │   ├── 2B</span><br><span class="line">    │   ├── 3K</span><br><span class="line">    │   ├── 5M</span><br><span class="line">    │   ├── 6I</span><br><span class="line">    │   ├── BZ</span><br><span class="line">    │   └── ...省略多行</span><br><span class="line">    ├── masterkey.cryptomator</span><br><span class="line">    ├── masterkey.cryptomator.8B90D483.bkup</span><br><span class="line">    ├── vault.cryptomator</span><br><span class="line">    └── vault.cryptomator.E0F34DEC.bkup</span><br></pre></td></tr></table></figure>
+
+<p>在这里我们无法获取有用数据。<br><code>重要.rtf</code>中写的是这个：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">⚠️ 保险库文件 ⚠️</span><br><span class="line">这是您的保险库的存储路径。</span><br><span class="line"></span><br><span class="line">请勿</span><br><span class="line">        • 更改此目录内的任何文件或者</span><br><span class="line">        • 将任何文件粘贴到此目录内以进行加密</span><br><span class="line"></span><br><span class="line">如果你想要加密文件并查看保险库的内容，请执行以下操作：</span><br><span class="line">        1.    将此保险库添加到Cryptomator；</span><br><span class="line">        2.    在Cryptomator中解锁保险库；</span><br><span class="line">        3.    通过点击“显示”按钮打开访问路径。</span><br><span class="line"></span><br><span class="line">如果您需要帮助，请阅读文档：http://docs.cryptomator.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h2><p>解密之后，能够挂载上我真正存放文件明文的仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/.local/share/Cryptomator/mnt/nomai_secret_data                                     17:57:49</span><br><span class="line">❯ <span class="built_in">ls</span></span><br><span class="line">欢迎.rtf  documents  super_diaries</span><br></pre></td></tr></table></figure>
+
+<h1 id="制作方法"><a href="#制作方法" class="headerlink" title="制作方法"></a>制作方法</h1><p>制作方法十分简单，我们只需要准备一个干净（不干净也行）存储介质。</p>
+<p>使用<code>Cryptomator</code>创建一个加密仓库，在软件内有详细的引导。<br>通常是新建-&gt;命名-&gt;设置一个强密码即可。然后妥善保管密码和恢复密钥。</p>
+<p>建立后的仓库可以复制拷贝到别的地方，使用客户端依旧能打开，这使得拷贝非常容易。</p>
+<p>使用的时候，我们只需要在客户端内选择加密库的路径，输入密码，即可挂载。日常需要时临时挂载，用完之后便锁定，毫不费力。</p>
+<hr>
+<p>End</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/mellvie/EchoesFromShell.git">Projects</a></li>
+        
+          <li><a href="/links/">Links</a></li>
+        
+          <li><a href="/pgp/mellvie.asc">PGP</a></li>
+        
+          <li><a href="/atom.xml">RSS</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">加密软件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">2.1.</span> <span class="toc-text">选择</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%95%E7%A4%BA"><span class="toc-number">3.</span> <span class="toc-text">展示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="toc-number">3.1.</span> <span class="toc-text">基本内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="toc-number">3.2.</span> <span class="toc-text">加密客户端</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E4%BB%93%E5%BA%93"><span class="toc-number">3.3.</span> <span class="toc-text">加密仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86"><span class="toc-number">3.4.</span> <span class="toc-text">解密</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">制作方法</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&text=在U盘建立一个加密存储库"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&is_video=false&description=在U盘建立一个加密存储库"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=在U盘建立一个加密存储库&body=Check out this article: https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&title=在U盘建立一个加密存储库"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&name=在U盘建立一个加密存储库&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/&t=在U盘建立一个加密存储库"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2026
+    Mellvie
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/mellvie/EchoesFromShell.git">Projects</a></li><!--
+     --><!--
+       --><li><a href="/links/">Links</a></li><!--
+     --><!--
+       --><li><a href="/pgp/mellvie.asc">PGP</a></li><!--
+     --><!--
+       --><li><a href="/atom.xml">RSS</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Three.js (local) + Starfield -->
+
+<script src="/js/lib/three.min.js"></script>
+
+
+<script src="/js/starfield.js"></script>
+
+<!-- page transitions: fallback for browsers without View Transitions -->
+
+<script src="/js/page-transitions.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

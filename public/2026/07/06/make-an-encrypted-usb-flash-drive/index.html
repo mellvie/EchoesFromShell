@@ -14,7 +14,7 @@
 <meta property="og:description" content="前言有段时间闲来无事，我开始整理文件，作为计科人，我对数据还是较为敏感的。整理数据未免要和存储打交道，于是整个工作就是把不重要的数据清理或者组织存放，重要的数据集合起来并且备份。然而在数据备份时，我意识到，重要数据除了照片视频之外，总的数据量并不大，正好手头有一个U盘，仅16GB，但存放文本类和少量音频、图像内容是充足的。并且这个U盘也偶尔随身携带，有时候装着 PPT , Excel , PDF">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-07-06T08:29:32.000Z">
-<meta property="article:modified_time" content="2026-07-06T10:29:51.642Z">
+<meta property="article:modified_time" content="2026-07-11T03:05:33.022Z">
 <meta property="article:author" content="Mellvie">
 <meta property="article:tag" content="encryption">
 <meta property="article:tag" content="privacy">
@@ -93,7 +93,7 @@
      --><!--
        --><li><a href="/links/">Links</a></li><!--
      --><!--
-       --><li><a href="/pgp/mellvie.asc">PGP</a></li><!--
+       --><li><a href="/pgp/mellvie-public-key.asc">PGP</a></li><!--
      --><!--
        --><li><a href="/atom.xml">RSS</a></li><!--
      -->
@@ -161,7 +161,7 @@
       
         <time datetime="2026-07-06T08:29:32.000Z" class="dt-published" itemprop="datePublished">2026-07-06</time>
         
-        (Updated: <time datetime="2026-07-06T10:29:51.642Z" class="dt-updated" itemprop="dateModified">2026-07-06</time>)
+        (Updated: <time datetime="2026-07-11T03:05:33.022Z" class="dt-updated" itemprop="dateModified">2026-07-11</time>)
         
       
     </div>
@@ -196,7 +196,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">❯ <span class="built_in">ls</span> -la /media/jiesi/nomai_doc</span><br><span class="line">总计 60</span><br><span class="line">drwxr-xr-x  5 jiesi jiesi 8192  1月  1  1970 .</span><br><span class="line">drwxr-x---+ 3 root  root  4096  7月  6 16:29 ..</span><br><span class="line">-rw-r--r--  1 jiesi jiesi  203  6月 15 22:50 请阅读.txt</span><br><span class="line">drwxr-xr-x  2 jiesi jiesi 8192  6月 13 13:42 cryptomator</span><br><span class="line">drwxr-xr-x  3 jiesi jiesi 8192  6月 12 23:51 encrypted_data</span><br><span class="line">-rw-r--r--  1 jiesi jiesi  445  6月 15 22:53 readme.md</span><br><span class="line">-rw-r--r--  1 jiesi jiesi  242  6月 15 22:52 README.txt</span><br></pre></td></tr></table></figure>
 
 <h2 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h2><p>可以看到，U盘下有一些裸文件，如<code>TXT</code>,<code>markdown</code>，这些文件可以直接打开。<br>我放了一些文本文件，当我意外丢失了这个U盘，捡到者查看这些文件便可获取到我的联系方式。<br>大概内容如下：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">❯ cat README.txt</span><br><span class="line"><span class="section"># This USB Flash Drive Is Not Discarded. Please Return It to Me.</span></span><br><span class="line"></span><br><span class="line">This USB flash drive is lost. Contact me if you get it unexpectedly.</span><br><span class="line">Significant files are encrypted. No need to try to crack.</span><br><span class="line">Email: mellviese@163.com</span><br><span class="line">Phone: <span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">❯ cat README.txt</span><br><span class="line"><span class="section"># This USB Flash Drive Is Not Discarded. Please Return It to Me.</span></span><br><span class="line"></span><br><span class="line">This USB flash drive is lost. Contact me if you get it unexpectedly.</span><br><span class="line">Significant files are encrypted. No need to try to crack.</span><br><span class="line">mail: mell@mellvie.com</span><br><span class="line">Phone: <span class="strong">**<span class="emphasis">*</span></span></span><br></pre></td></tr></table></figure>
 
 <p>并且由于重要文件加密放在仓库里，恶意持有者无法从中获取到任何信息。</p>
 <h2 id="加密客户端"><a href="#加密客户端" class="headerlink" title="加密客户端"></a>加密客户端</h2><p><code>cryptomator</code> 文件夹内放的是多个平台的客户端，目的并不是给捡到者提供访问我加密数据的工具，而是在不同机器上便利我使用。</p>
@@ -241,7 +241,7 @@
         
           <li><a href="/links/">Links</a></li>
         
-          <li><a href="/pgp/mellvie.asc">PGP</a></li>
+          <li><a href="/pgp/mellvie-public-key.asc">PGP</a></li>
         
           <li><a href="/atom.xml">RSS</a></li>
         
@@ -307,7 +307,7 @@
      --><!--
        --><li><a href="/links/">Links</a></li><!--
      --><!--
-       --><li><a href="/pgp/mellvie.asc">PGP</a></li><!--
+       --><li><a href="/pgp/mellvie-public-key.asc">PGP</a></li><!--
      --><!--
        --><li><a href="/atom.xml">RSS</a></li><!--
      -->

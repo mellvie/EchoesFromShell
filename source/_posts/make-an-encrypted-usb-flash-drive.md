@@ -70,7 +70,7 @@ drwxr-xr-x  3 jiesi jiesi 8192  6月 12 23:51 encrypted_data
 
 This USB flash drive is lost. Contact me if you get it unexpectedly.
 Significant files are encrypted. No need to try to crack.
-Email: mellviese@163.com
+mail: mell@mellvie.com
 Phone: ***
 ```
 
@@ -157,6 +157,16 @@ encrypted_data
 使用的时候，我们只需要在客户端内选择加密库的路径，输入密码，即可挂载。日常需要时临时挂载，用完之后便锁定，毫不费力。
 
 ---
+
+> 我在 Linux 上使用偶尔出现bug,无法正常挂载，暂时没有完全研究。
+> 通过这两个指令一般能解决
+> ```
+❯ fusermount -u ~/.local/share/Cryptomator/mnt/nomai_secret_data
+~                                                                                                              11:50:57
+❯ rmdir ~/.local/share/Cryptomator/mnt/nomai_secret_data
+> ```
+> 具体访问这个帖子
+> [github discussion](https://github.com/cryptomator/cryptomator/discussions/3460#discussioncomment-9817403)
 
 End
 

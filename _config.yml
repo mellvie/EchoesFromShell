@@ -106,7 +106,8 @@ theme_config:
     articles: /archives/
     projects: https://github.com/mellvie/EchoesFromShell.git
     Links: /links/
-    PGP: /pgp/mellvie.asc
+    PGP: /pgp/mellvie-public-key.asc
+
     RSS: /atom.xml
 
 # Deployment

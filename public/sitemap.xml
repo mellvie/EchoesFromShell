@@ -2,18 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/</loc>
+    <loc>https://echoesfromshell.netlify.app/about/index.html</loc>
     
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://echoesfromshell.netlify.app/about/index.html</loc>
+    <loc>https://echoesfromshell.netlify.app/2026/07/24/a-thought-about-the-one-in-a-certain-circle/</loc>
     
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-07-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/</loc>
+    
+    <lastmod>2026-07-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,7 +67,7 @@
 
   <url>
     <loc>https://echoesfromshell.netlify.app/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,84 +75,112 @@
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/%E5%90%8E%E6%91%87/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/postrock/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/Sigur-Ros/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/music/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/rss/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/indieweb/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/self-hosting/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/technology/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/start-page/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/privacy/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/encryption/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://echoesfromshell.netlify.app/tags/tools/</loc>
-    <lastmod>2026-07-11</lastmod>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/tags/thought/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/tags/za/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/tags/self/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://echoesfromshell.netlify.app/tags/life/</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

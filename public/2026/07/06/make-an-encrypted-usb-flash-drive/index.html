@@ -14,7 +14,7 @@
 <meta property="og:description" content="前言有段时间闲来无事，我开始整理文件，作为计科人，我对数据还是较为敏感的。整理数据未免要和存储打交道，于是整个工作就是把不重要的数据清理或者组织存放，重要的数据集合起来并且备份。然而在数据备份时，我意识到，重要数据除了照片视频之外，总的数据量并不大，正好手头有一个U盘，仅16GB，但存放文本类和少量音频、图像内容是充足的。并且这个U盘也偶尔随身携带，有时候装着 PPT , Excel , PDF">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-07-06T08:29:32.000Z">
-<meta property="article:modified_time" content="2026-07-11T03:05:33.022Z">
+<meta property="article:modified_time" content="2026-07-12T03:55:25.461Z">
 <meta property="article:author" content="Mellvie">
 <meta property="article:tag" content="encryption">
 <meta property="article:tag" content="privacy">
@@ -103,6 +103,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" aria-label="Previous post" href="/2026/07/24/a-thought-about-the-one-in-a-certain-circle/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" aria-label="Next post" href="/2026/05/16/rss-the-feed-that-never-died/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -161,7 +163,7 @@
       
         <time datetime="2026-07-06T08:29:32.000Z" class="dt-published" itemprop="datePublished">2026-07-06</time>
         
-        (Updated: <time datetime="2026-07-11T03:05:33.022Z" class="dt-updated" itemprop="dateModified">2026-07-11</time>)
+        (Updated: <time datetime="2026-07-12T03:55:25.461Z" class="dt-updated" itemprop="dateModified">2026-07-12</time>)
         
       
     </div>
@@ -217,6 +219,11 @@
 <p>建立后的仓库可以复制拷贝到别的地方，使用客户端依旧能打开，这使得拷贝非常容易。</p>
 <p>使用的时候，我们只需要在客户端内选择加密库的路径，输入密码，即可挂载。日常需要时临时挂载，用完之后便锁定，毫不费力。</p>
 <hr>
+<blockquote>
+<p>我在 Linux 上使用偶尔出现bug,无法正常挂载，暂时没有完全研究。<br>通过这两个指令一般能解决</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">❯ fusermount -u ~/.local/share/Cryptomator/mnt/nomai_secret_data</span><br><span class="line">~                                                                                                              11:50:57</span><br><span class="line">❯ rmdir ~/.local/share/Cryptomator/mnt/nomai_secret_data</span><br></pre></td></tr></table></figure>
+<p>具体访问这个帖子<br><a target="_blank" rel="noopener" href="https://github.com/cryptomator/cryptomator/discussions/3460#discussioncomment-9817403">github discussion</a></p>
+</blockquote>
 <p>End</p>
 
   </div>

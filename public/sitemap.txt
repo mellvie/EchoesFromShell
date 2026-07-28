@@ -1,5 +1,6 @@
-https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/
 https://echoesfromshell.netlify.app/about/index.html
+https://echoesfromshell.netlify.app/2026/07/24/a-thought-about-the-one-in-a-certain-circle/
+https://echoesfromshell.netlify.app/2026/07/06/make-an-encrypted-usb-flash-drive/
 https://echoesfromshell.netlify.app/2026/05/16/rss-the-feed-that-never-died/
 https://echoesfromshell.netlify.app/2026/04/27/postrock-music-recommendation-0/
 https://echoesfromshell.netlify.app/2026/04/26/welcome/
@@ -17,3 +18,7 @@ https://echoesfromshell.netlify.app/tags/start-page/
 https://echoesfromshell.netlify.app/tags/privacy/
 https://echoesfromshell.netlify.app/tags/encryption/
 https://echoesfromshell.netlify.app/tags/tools/
+https://echoesfromshell.netlify.app/tags/thought/
+https://echoesfromshell.netlify.app/tags/za/
+https://echoesfromshell.netlify.app/tags/self/
+https://echoesfromshell.netlify.app/tags/life/

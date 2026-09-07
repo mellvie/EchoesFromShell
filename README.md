@@ -8,12 +8,9 @@
 
 ## 关于本博客
 
-EchoesFromShell 是一个自托管的个人博客，使用 [Hexo](https://hexo.io/) 构建，部署于 [Netlify](https://www.netlify.com/)。
+EchoesFromShell 是一个个人博客，使用 [Hexo](https://hexo.io/) 构建，部署于 [Netlify](https://www.netlify.com/)。
 
-内容方向：技术随笔、音乐、开源、独立网络精神。
-
-特色：
-- 📡 **完整 RSS** — 双格式输出（Atom 1.0 + RSS 2.0），全文内容，多个订阅入口
+内容方向：技术、随笔、开源。
 
 ---
 
@@ -45,7 +42,7 @@ EchoesFromShell 是一个自托管的个人博客，使用 [Hexo](https://hexo.i
 | Atom 1.0 | `/atom.xml` |
 | RSS 2.0 | `/rss2.xml` |
 
-全文输出，Newsboat / Miniflux / Feedly 均可使用。
+全文输出。
 
 ---
 
@@ -57,8 +54,6 @@ cd EchoesFromShell
 npm install
 hexo server
 ```
-
-> 注意：主题 Three.js 已内嵌于 `themes/echoes/source/js/lib/`，无需网络加载。
 
 ---
 

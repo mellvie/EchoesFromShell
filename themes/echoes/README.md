@@ -1,3 +1,5 @@
+> 偷懒了一下，此处为 AI 撰写
+
 # Echoes — Outer Wilds 主题
 
 > 衍生自 [hexo-theme-cactus](https://github.com/probberechts/hexo-theme-cactus) (MIT)，深度魔改的 Outer Wilds 风格 Hexo 主题。

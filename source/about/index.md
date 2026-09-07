@@ -16,7 +16,6 @@ EchoesFromShell is where I write about things that resonate: technology, music, 
 Fingerprint: `EF8A 2FC3 DB59 DA4D 504A DF8C AE3E 9663 E056 D9A6`
 
 - [Download my PGP public key](/pgp/mellvie-public-key.asc)
-- [Friend: axty's PGP key](/pgp/axty.asc)
 
 Uploaded to [keys.openpgp.org](https://keys.openpgp.org/)
 
